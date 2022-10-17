@@ -5,7 +5,6 @@ require("dotenv/config");
 require("./config/dbconnection");
 
 const app = express();
-
 const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
