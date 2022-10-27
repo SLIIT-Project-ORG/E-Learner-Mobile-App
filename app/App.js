@@ -7,7 +7,7 @@ import Login from './src/screens/User_Mgmt/Login';
 import SignIn from './src/screens/User_Mgmt/Signin';
 import ProfileUpdate from './src/screens/User_Mgmt/UpdateProfile';
 import Profile from './src/screens/User_Mgmt/UserProfile';
-
+import AddVideos from './src/screens/Video_Upload_Mgmt/AddVideoDetails';
 
 
 export default function App() {
@@ -32,6 +32,9 @@ export default function App() {
     </View>,
     <View>
       <Profile/>
-    </View>
+    </View>,
+     <View>
+     <AddVideos/>
+   </View>
   );
 }
