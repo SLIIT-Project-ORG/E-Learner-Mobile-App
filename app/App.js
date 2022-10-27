@@ -42,9 +42,8 @@ export default function App() {
     <View>
       <PostView/>
     </View>,
-
     <View>
     <UpdatePost/>
-    </View>
+    </View> 
   );
 }
