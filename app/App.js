@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostView from './src/screens/Post_Mgmt/PostView';
@@ -10,7 +9,7 @@ import Login from './src/screens/User_Mgmt/Login';
 import SignIn from './src/screens/User_Mgmt/Signin';
 import ProfileUpdate from './src/screens/User_Mgmt/UpdateProfile';
 import Profile from './src/screens/User_Mgmt/UserProfile';
-
+import AddVideos from './src/screens/Video_Upload_Mgmt/AddVideoDetails';
 
 
 export default function App() {
@@ -31,9 +30,13 @@ export default function App() {
       <ChangePassword />
     </View>,
     <View>
-      <ProfileUpdate/>
+      <ProfileUpdate />
     </View>,
     <View>
+      <Profile />
+    </View>,
+    <View>
+
       <Profile/>
     </View>,
     <View>
@@ -45,5 +48,10 @@ export default function App() {
     <View>
     <UpdatePost/>
     </View> 
+
+      <AddVideos />
+    </View>
+
+
   );
 }
