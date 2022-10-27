@@ -1,8 +1,9 @@
 import React from "react";
 import { SafeAreaView, ScrollView ,Text,View,StyleSheet, TouchableOpacity} from "react-native";
+ 
 
 
-const PostView = ()=> {
+const PostView = ()=> {   
   return (
     <SafeAreaView>
         <ScrollView>
@@ -14,9 +15,13 @@ const PostView = ()=> {
           <View style={Styles.defaultButton1}>
           <TouchableOpacity style={{fontSize:20, color:'black',textAlign:'center'}}>ADD NEW</TouchableOpacity>
           </View>
-            <View style={Styles.box}>  <IconButton icon={props => <Icon name="eye" {...props} />} /></View>
+           
 
+            <View style={Styles.box}>
+               </View>
+            
             <View style={Styles.box}> </View>
+
             <View style={Styles.box}> </View>
            
             
@@ -66,14 +71,7 @@ defaultButton1:{
   fontWeight:'bold',
   marginBottom:30,
   
-
-
 }
    
-    
-    
-
-
-
 })
 export default PostView

@@ -1,6 +1,8 @@
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostView from './src/screens/Post_Mgmt/PostView';
+import PostViewById from './src/screens/Post_Mgmt/PostViewById';
 import UpdatePost from './src/screens/Post_Mgmt/UpdatePost';
 import ChangePassword from './src/screens/User_Mgmt/ChangePassword';
 import ForgetPassword from './src/screens/User_Mgmt/ForgetPassword';
@@ -36,22 +38,24 @@ export default function App() {
       <Profile />
     </View>,
     <View>
-
-      <Profile/>
+      <Profile />
     </View>,
     <View>
-      <AddPost/>
+      <AddPost />
     </View>,
     <View>
-      <PostView/>
+      <PostView />
+    </View>,
+      <View>
+      <UpdatePost />
     </View>,
     <View>
-    <UpdatePost/>
-    </View> 
-
       <AddVideos />
+    </View >,
+    <View>
+      <PostViewById/>
     </View>
 
-
+  
   );
 }
