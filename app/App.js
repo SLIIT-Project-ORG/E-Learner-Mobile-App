@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import AvailableCourses from './src/screens/Course_Mgmt/AvailableCourses';
-import CourseMenu from './src/screens/Course_Mgmt/CourseMenu';
 import ChangePassword from './src/screens/User_Mgmt/ChangePassword';
 import ForgetPassword from './src/screens/User_Mgmt/ForgetPassword';
 import Home from './src/screens/User_Mgmt/Home';
@@ -38,5 +35,6 @@ export default function App() {
     <View>
       <AddVideos />
     </View>
+
   );
 }
