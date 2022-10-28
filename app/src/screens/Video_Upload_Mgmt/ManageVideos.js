@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useCallback } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -10,10 +11,11 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Alert,
+  Linking,
 } from "react-native";
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
-
 
 const ManageVideos = () => {
   const [videodetails, setvideodetails] = useState([]);
@@ -42,6 +44,29 @@ const ManageVideos = () => {
     window.location.reload();
   }
 
+  const OpenURLButton = ({ url, children }) => {
+    const handlePress = useCallback(async () => {
+      // Checking if the link is supported for links with custom URL scheme.
+      const supported = await Linking.canOpenURL(url);
+
+      if (supported) {
+        // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+        // by some browser in the mobile
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+      }
+    }, [url]);
+
+    return <Button title="VIEW" onPress={handlePress} buttonStyle={{
+      padding:10,               
+      borderRadius: 0,
+      marginLeft: 0,
+      marginRight: 0,
+      marginBottom: 2,
+    }} />;
+  };
+
   return (
     <SafeAreaView style={{ felix: 1 }}>
       <View style={styles.container}>
@@ -51,92 +76,84 @@ const ManageVideos = () => {
         <Text style={styles.myTitle2}>Manage Videos</Text>
       </View>
       <View>
-          
-          <TextInput
-            style={styles.inputfields}
-            onChange={
-                (e) => {
-                    setSearchData(e.target.value)
-                }
-            }
-            placeholder="Search Videos"
-          />
-        </View>
+        <TextInput
+          style={styles.inputfields}
+          onChange={(e) => {
+            setSearchData(e.target.value);
+          }}
+          placeholder="Search Videos"
+        />
+      </View>
       <ScrollView>
-        {
-        
-        videodetails.filter(value => {
-
+        {videodetails
+          .filter((value) => {
             if (searchData === "") {
-
-                return value;
-
+              return value;
             } else if (
-
-                value.title.toLowerCase().includes(searchData.toLowerCase()) 
-
+              value.title.toLowerCase().includes(searchData.toLowerCase())
             ) {
-
-                return value;
-
+              return value;
             }
+          })
 
-        })
-        
-        
-        
-        
-        
-        .map((val, key) => {
-          return (
-            <View style={styles.container}>
-              <Card>
-                <Card.Title>{val.title}</Card.Title>
-                <Card.Image
-                  style={{ padding: 0 }}
-                  source={val.thumbnaillink}
-                />
-                <Text style={{ marginBottom: 10 }}>
-                 {val.description}
-                </Text>
-           
-                <Button
-                 
-                  buttonStyle={{
-                    backgroundColor: "#1fbf3f",
-                    
-                    borderRadius: 0,
-                    marginLeft: 0,
-                    marginRight: 0,
-                    marginBottom: 2,
-                  }}
-                  title="UPDATE VIDEO DETAILS"
-                />
-                <Button
-                  
-                  buttonStyle={{
-                    backgroundColor: "gray",
-                   
-                    borderRadius: 0,
-                    marginLeft: 0,
-                    marginRight: 0,
-                    marginBottom: 2,
-                  }}
-                  title="DELETE VIDEO"
-                  onPress={() => deletevideo(val._id)}
-                />
-              </Card>
-            </View>
-          );
-        })}
+          .map((val, key) => {
+            return (
+              <View style={styles.container}>
+                <Card>
+                  <Card.Title>{val.title}</Card.Title>
+                  <Card.Image
+                    style={{ padding: 0 }}
+                    source={val.thumbnaillink}
+                  />
+                  <Text style={{ marginBottom: 10 }}>{val.description}</Text>
+                  <OpenURLButton
+                    url={val.link}
+                    buttonStyle={{
+                      
+                      borderRadius: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginBottom: 2,
+                    }}
+                    title="VIEW"
+                  ></OpenURLButton>
+                  <Button
+                    buttonStyle={{
+                      backgroundColor: "#1fbf3f",
+
+                      borderRadius: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginBottom: 2,
+                    }}
+                    title="UPDATE VIDEO DETAILS"
+                  />
+                  <Button
+                    buttonStyle={{
+                      backgroundColor: "gray",
+
+                      borderRadius: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginBottom: 2,
+                    }}
+                    title="DELETE VIDEO"
+                    onPress={() => deletevideo(val._id)}
+                  />
+                </Card>
+              </View>
+            );
+          })}
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  
   container: {
-    backgroundColor: "white",
+    backgroundColor: "white"
+    ,
   },
   myTitle: {
     fontSize: 40,
