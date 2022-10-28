@@ -17,6 +17,7 @@ import { Card, ListItem, Button, Icon } from "react-native-elements";
 
 const ManageVideos = () => {
   const [videodetails, setvideodetails] = useState([]);
+  const [searchData, setSearchData] = useState("");
   useEffect(() => {
     axios
       .get(`http://localhost:5000/videodetails/`)
@@ -49,9 +50,44 @@ const ManageVideos = () => {
       <View style={styles.container}>
         <Text style={styles.myTitle2}>Manage Videos</Text>
       </View>
-
+      <View>
+          
+          <TextInput
+            style={styles.inputfields}
+            onChange={
+                (e) => {
+                    setSearchData(e.target.value)
+                }
+            }
+            placeholder="Search Videos"
+          />
+        </View>
       <ScrollView>
-        {videodetails.map((val, key) => {
+        {
+        
+        videodetails.filter(value => {
+
+            if (searchData === "") {
+
+                return value;
+
+            } else if (
+
+                value.title.toLowerCase().includes(searchData.toLowerCase()) 
+
+            ) {
+
+                return value;
+
+            }
+
+        })
+        
+        
+        
+        
+        
+        .map((val, key) => {
           return (
             <View style={styles.container}>
               <Card>
