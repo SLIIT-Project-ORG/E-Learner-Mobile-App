@@ -14,6 +14,11 @@ const VideoDetailsSchema = new Schema({
         required: true
 
     },
+    thumbnaillink : {
+        type : String,
+        required: true
+
+    },
     description : {
         type : String,
         required: true
