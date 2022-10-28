@@ -5,6 +5,7 @@ router.route("/add").post((req,res)=>{
    
     const title= req.body.title;
     const link= req.body.link;
+    const thumbnaillink= req.body.thumbnaillink;
     const description= req.body.description;
    
    
@@ -13,6 +14,7 @@ router.route("/add").post((req,res)=>{
         
         title,
         link,
+        thumbnaillink,
         description,
        
     

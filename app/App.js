@@ -11,7 +11,7 @@ import SignIn from './src/screens/User_Mgmt/Signin';
 import ProfileUpdate from './src/screens/User_Mgmt/UpdateProfile';
 import Profile from './src/screens/User_Mgmt/UserProfile';
 import AddVideos from './src/screens/Video_Upload_Mgmt/AddVideoDetails';
-
+import ManageVideos from './src/screens/Video_Upload_Mgmt/ManageVideos';
 
 export default function App() {
   return (
@@ -55,6 +55,14 @@ export default function App() {
     <View>
       <PostDelete/>
     </View>
+
+    <View>
+      <AddVideos />
+    </View>,
+    <View>
+    <ManageVideos/>
+  </View>
+
 
     
 
