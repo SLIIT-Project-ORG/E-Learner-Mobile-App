@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity,Imag
 import AppBarComponent from '../Common/AppBarComponent';
 import profile from '../../../assets/profile.png'
 
+
 const FView = () => {
   return (
     <SafeAreaView>
