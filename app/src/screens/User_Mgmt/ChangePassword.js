@@ -1,6 +1,5 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from "react-native";
-import AppBarComponent from "../Common/AppBarComponent";
 
 
 const ChangePassword = () => {
@@ -9,8 +8,6 @@ const ChangePassword = () => {
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-
-               <AppBarComponent/>
                
                 <View style={styles.container}>
                 <Text style={styles.myTitle}>Change Password</Text>
