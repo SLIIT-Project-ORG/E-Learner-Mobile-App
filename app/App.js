@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
+import PostDelete from './src/screens/Post_Mgmt/PostDelete';
 import PostView from './src/screens/Post_Mgmt/PostView';
 import UpdatePost from './src/screens/Post_Mgmt/UpdatePost';
 import ChangePassword from './src/screens/User_Mgmt/ChangePassword';
@@ -47,10 +48,15 @@ export default function App() {
     </View>,
     <View>
     <UpdatePost/>
-    </View> 
-
+    </View> ,
+<View>
       <AddVideos />
+    </View>,
+    <View>
+      <PostDelete/>
     </View>
+
+    
 
 
   );
