@@ -1,12 +1,4 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Acourses from './src/screens/Course_Mgmt/AvailableCourses';
-import Icourses from './src/screens/Course_Mgmt/CIntroduction';
-import CourseMenu from './src/screens/Course_Mgmt/CourseMenu';
-import CourseStep from './src/screens/Course_Mgmt/CourseStep';
-import Dcourses from './src/screens/Course_Mgmt/DeliteCourses';
-import Feedback from './src/screens/Course_Mgmt/Feedback';
-import FView from './src/screens/Course_Mgmt/FeedbackView';
-
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostDelete from './src/screens/Post_Mgmt/PostDelete';
 import PostView from './src/screens/Post_Mgmt/PostView';
@@ -23,85 +15,57 @@ import ManageVideos from './src/screens/Video_Upload_Mgmt/ManageVideos';
 
 export default function App() {
   return (
-
     <View>
-      <Profile />
-    </View>,
-    <View>
-      <UpdatePost />
-    </View>,
-    <View>
-      <AddVideos />
-    </View>,
-
-    <View>
-      <AddVideos />
-    </View>,
-    <View>
-      <ManageVideos />
-    </View>,
-
-    <View>
-      <CourseMenu />
+      <Home />
     </View>,
     <View>
       <Login />
     </View>,
     <View>
-      <Home />
-    </View>,
-
-    <View>
       <SignIn />
+    </View>,
+    <View>
+      <ForgetPassword />
+    </View>,
+    <View>
+      <ChangePassword />
     </View>,
     <View>
       <ProfileUpdate />
     </View>,
-
     <View>
-
       <Profile />
     </View>,
+    <View>
+
+      <Profile/>
+    </View>,
+    <View>
+      <AddPost/>
+    </View>,
+    <View>
+      <PostView/>
+    </View>,
+    <View>
+    <UpdatePost/>
+    </View> ,
+<View>
+      <AddVideos />
+    </View>,
+    <View>
+      <PostDelete/>
+    </View>
 
     <View>
-      <ForgetPassword />
+      <AddVideos />
     </View>,
-
     <View>
-      <ChangePassword />
-    </View>,
+    <ManageVideos/>
+  </View>
 
-    <View>
-      <AddPost />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-<View>
-<PostView />
-</View>,
-<View>
-  <CourseStep/>
-</View>,
-<View>
-  <Acourses/>
-</View>,
-<View>
-  <Dcourses/>
-</View>,
-<View>
-  <Icourses/>
-</View>,
-<View>
-  <Feedback/>
-</View>,
-<View>
-  <FView/>
-</View>
 
     
+
 
   );
 }
