@@ -1,13 +1,14 @@
 import React from 'react'
 import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
 import login from '../../../assets/login.png';
+import AppBarComponent from '../Common/AppBarComponent';
 
 const AddPost = () => {
  return(
     <SafeAreaView>
         <ScrollView>
 
-               
+               <AppBarComponent/>
                 <View  style={styles.container}>
                 <Text style ={styles.title}>ADD POST</Text>
                 <View  style={styles.container}>
@@ -71,11 +72,15 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'black',
         fontWeight:'bold',
-        backgroundColor:'#1fbf3f'
+        backgroundColor:'#1fbf3f',
+        marginLeft:30,
+        marginRight:30
+       
 
     },
     container:{
         backgroundColor:'white',
+       
     },
     label: {
         fontSize: 20,
@@ -91,10 +96,10 @@ const styles = StyleSheet.create({
      
         borderColor:'a7a7',
         borderWidth:1,
-        padding:10,
+        padding:8,
         fontSize:16,
         borderRadius:10,
-        marginTop:10,
+        marginTop:8,
         marginLeft:30,
         marginRight:30,
         
@@ -102,8 +107,8 @@ const styles = StyleSheet.create({
     BorderClass:
     {
 
-        width: 150,
-        height: 150,
+        width: 130,
+        height: 130,
         borderWidth: 4,
         borderColor: 'black',
         marginTop:10,
@@ -123,10 +128,10 @@ const styles = StyleSheet.create({
      defaultButton1:{
        
          backgroundColor:'#a1f0b0',
-         marginTop:10,
+         marginTop:8,
          marginLeft:50,
          marginRight:50,
-         padding:15,
+         padding:9,
          borderRadius:15
   
   
@@ -137,7 +142,7 @@ const styles = StyleSheet.create({
         marginLeft:180,
         marginRight:10,
         marginTop:-100,
-        padding:10,
+        padding:8,
         borderRadius:15
 
 

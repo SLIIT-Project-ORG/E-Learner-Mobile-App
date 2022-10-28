@@ -5,6 +5,7 @@ import articles from '../../../assets/articles.png';
 import video from '../../../assets/video.png';
 import courses from '../../../assets/courses.png';
 import share from '../../../assets/share.png'
+import AppBarComponent from "../Common/AppBarComponent";
 
 const Home = () => {
 
@@ -12,6 +13,8 @@ const Home = () => {
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
+
+          <AppBarComponent/>
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={home} style={styles.BorderClass} />
 
@@ -23,9 +26,7 @@ const Home = () => {
                         <Image source={articles} style={styles.BorderButton1} />
 
                     </TouchableOpacity>
-
-//
-                //                
+            
                 </View>
                 <View >
                     <TouchableOpacity>
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     {
 
         width: 360,
-        height: 300,
+        height: 280,
         borderWidth: 4,
         borderColor: 'black',
     },
@@ -89,12 +90,12 @@ const styles = StyleSheet.create({
 
         width: 170,
         height: 150,
-        marginTop: 50,
+        marginTop:20,
         marginLeft: 10,
         borderWidth: 4,
         borderColor: 'black',
         borderRadius: 12,
-        justifyContent: 'center'
+       
     },
 
 
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
 
         width: 170,
         height: 150,
-        marginTop: -170,
+        marginTop: -150,
         marginLeft: 185,
         borderWidth: 4,
         borderColor: 'black',

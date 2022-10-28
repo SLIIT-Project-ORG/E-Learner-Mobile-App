@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from "react-native";
 import profile from '../../../assets/profile.png';
+import AppBarComponent from "../Common/AppBarComponent";
 
 const Profile = () => {
 
@@ -8,6 +9,8 @@ const Profile = () => {
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
+
+            <AppBarComponent/>
                 <View style={{ justifyContent: 'left', alignItems: 'left' }}>
                 <Image source={profile} style={styles.BorderClass} />
                 </View>
