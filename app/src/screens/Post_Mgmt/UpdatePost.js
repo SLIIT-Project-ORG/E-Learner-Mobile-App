@@ -8,6 +8,7 @@ const UpdatePost = ()=> {
 
     <SafeAreaView>
     <ScrollView>
+   
             
             <View  style={styles.container}>
             <Text style ={styles.title}>Update POST</Text>
