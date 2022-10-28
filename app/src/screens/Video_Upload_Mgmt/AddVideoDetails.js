@@ -15,6 +15,7 @@ import {
 const AddVideos = () => {
   const [title, settitle] = useState("");
   const [link, setlink] = useState("");
+  const [thumbnaillink, setthumbnaillink] = useState("");
   const [description, setdescription] = useState("");
 
   function sendData(e) {
@@ -22,11 +23,12 @@ const AddVideos = () => {
     const newfueldetail = {
       title,
       link,
+      thumbnaillink,
       description,
     };
     //console.log(newfueldetail);
     axios
-      .post("http://localhost:8000/videodetails/add", newfueldetail)
+      .post("http://localhost:5000/videodetails/add", newfueldetail)
       .then(() => {
         alert("video Detais added");
       })
@@ -57,13 +59,23 @@ const AddVideos = () => {
         </View>
 
         <View>
-          <Text style={styles.label}>Link</Text>
+          <Text style={styles.label}> Video Link</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
               setlink(e.target.value);
             }}
-            placeholder="Link"
+            placeholder=" Video Link"
+          />
+        </View>
+        <View>
+          <Text style={styles.label}>Thumbnail Link</Text>
+          <TextInput
+            style={styles.inputfields}
+            onChange={(e) => {
+              setthumbnaillink(e.target.value);
+            }}
+            placeholder="Thubmnail Link"
           />
         </View>
         <View>
