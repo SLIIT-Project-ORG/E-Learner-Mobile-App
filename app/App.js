@@ -38,33 +38,60 @@ export default function App() {
     </View>,
     <View>
 
-      <Profile/>
+      <Profile />
     </View>,
     <View>
-      <AddPost/>
+      <AddPost />
     </View>,
     <View>
-      <PostView/>
+      <PostView />
     </View>,
     <View>
-    <UpdatePost/>
-    </View> ,
-<View>
+      <UpdatePost />
+    </View>,
+    <View>
       <AddVideos />
     </View>,
     <View>
       <PostDelete/>
-    </View>
+    </View>,
 
+   <View>
+      <PostDelete />
+    </View>,
+
+
+    <View>
+      <CourseStep />
+    </View>,
+    <View>
+      <Acourses />
+    </View>,
+    <View>
+      <Dcourses />
+    </View>,
+    <View>
+      <Icourses />
+    </View>,
+    <View>
+      <Feedback />
+    </View>,
+    <View>
+      <FView />
+    </View>,
+    <View>
+      <AddPost />
+    </View>,
+
+    <View>
+      <PostView />
+    </View>,
     <View>
       <AddVideos />
     </View>,
     <View>
-    <ManageVideos/>
-  </View>
-
-
-    
+      <ManageVideos />
+    </View>
 
 
   );
