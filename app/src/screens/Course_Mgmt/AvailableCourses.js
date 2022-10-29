@@ -14,7 +14,6 @@ const Acourses = () => {
           <Text style={styles.title}>AVAILABLE COURSES</Text>
         </View>
 
-        
         <View style={styles.box} >
             <View><Image source={java} style={styles.BorderClass1} ></Image></View>
            

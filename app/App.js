@@ -71,17 +71,11 @@ export default function App() {
       <ChangePassword />
     </View>,
 
-    <View>
-      <AddPost />
-    </View>,
-
-    <View>
+   <View>
       <PostDelete />
     </View>,
 
-<View>
-<PostView />
-</View>,
+
 <View>
   <CourseStep/>
 </View>,
@@ -99,6 +93,13 @@ export default function App() {
 </View>,
 <View>
   <FView/>
+</View>,
+ <View>
+   <AddPost />
+ </View>,
+
+<View>
+<PostView />
 </View>
 
     

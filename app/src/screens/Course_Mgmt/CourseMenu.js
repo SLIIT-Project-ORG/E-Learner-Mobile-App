@@ -19,8 +19,7 @@ const CourseMenu = () => {
                 <View>
                 <Image Acourses></Image>
                 </View> 
-
-                <TouchableOpacity>
+               <TouchableOpacity>
                 <View>
                 <Image source={course1} style={styles.BorderClass1}></Image>
                 <Text style={styles.label}>My Courses</Text>

@@ -10,13 +10,9 @@ const Feedback = () => {
             <ScrollView>
             <AppBarComponent/>
             
-               
-
                 <View style={styles.container}>
                 <Text style={styles.myTitle}>FEEDBACK </Text>
                 </View>
-                
-                
                 <View>
                 
                 <TextInput style={styles.inputfields1} placeholder='Type here'/>

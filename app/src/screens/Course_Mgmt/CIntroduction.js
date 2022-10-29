@@ -16,8 +16,7 @@ const Icourses = () => {
           <Text style={styles.title2}>Created By Admin </Text>
         </View>
 
-        
-        <View style={styles.box} >
+         <View style={styles.box} >
             <View><Image source={java} style={styles.BorderClass1} ></Image></View>
            
             <View><Text style={styles.label}>INTRODUCTION</Text></View>

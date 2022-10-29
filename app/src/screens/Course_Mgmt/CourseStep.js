@@ -18,13 +18,9 @@ const CourseStep = () => {
                     <Text style={styles.label}>1</Text>
                     <View style={styles.box3}>
                    </View>
-               
-
-
+            
                 </View>
-                   
-                   
-                </View>
+                    </View>
                
 
                

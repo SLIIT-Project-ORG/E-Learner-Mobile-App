@@ -17,8 +17,7 @@ const Dcourses = () => {
         
         <View style={styles.box} >
             <View><Image source={java} style={styles.BorderClass1} ></Image></View>
-           
-            <View><Text style={styles.label}>JAVA PROGRAMMING</Text></View>
+       <View><Text style={styles.label}>JAVA PROGRAMMING</Text></View>
 
           <View>
             <TouchableOpacity style={styles.defaultButton1} >

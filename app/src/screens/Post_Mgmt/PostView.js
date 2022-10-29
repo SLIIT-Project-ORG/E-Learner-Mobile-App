@@ -70,9 +70,6 @@ const PostView = () => {
 
         </View>
 
-
-
-        
         <View style={Styles.box} >
 
           <View>
@@ -98,7 +95,6 @@ const PostView = () => {
 const Styles = StyleSheet.create({
 
   title: {
-
     fontSize: 40,
     textAlign: 'center',
     fontWeight: 'bold',
@@ -107,53 +103,36 @@ const Styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     padding: 10,
-
-
-
   },
   box: {
-
     backgroundColor: 'lightgray',
     height: 150,
     width: 340,
-    borderColor: 'black',
+    borderColor: 'white',
     marginTop: 10,
     marginLeft: 10,
     marginRight: 50,
-    borderRadius: 10,
+    borderRadius: 15,
     borderWidth: 2,
-
-
   },
   defaultButton1: {
-
-    backgroundColor: 'blue',
+    backgroundColor: '#4d88ff',
     marginTop: 10,
     marginLeft: 120,
     marginRight: 20,
     padding: 10,
     borderRadius: 15,
     fontWeight: 'bold'
-
   },
-
   defaultButton2: {
-
-    backgroundColor: 'lightgreen',
+    backgroundColor: '#33ff77',
     marginTop: 10,
     marginLeft: 120,
     marginRight: 20,
     padding: 10,
     borderRadius: 15,
     fontWeight: 'bold'
-
   }
 
-
-
-
-
-
-
 })
-export default PostView
+export default PostView 

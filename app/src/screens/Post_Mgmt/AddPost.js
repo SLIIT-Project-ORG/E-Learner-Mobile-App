@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
-import login from '../../../assets/login.png';
+import table from '../../../assets/table.png';
 import AppBarComponent from '../Common/AppBarComponent';
 
 const AddPost = () => {
@@ -12,7 +12,7 @@ const AddPost = () => {
                 <View  style={styles.container}>
                 <Text style ={styles.title}>ADD POST</Text>
                 <View  style={styles.container}>
-               <Image source={login} style={styles.BorderClass} />
+               <Image source={table} style={styles.BorderClass} />
                 </View>
 
                 <View>
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     },
     container:{
         backgroundColor:'white',
+        
        
     },
     label: {
@@ -107,9 +108,9 @@ const styles = StyleSheet.create({
     BorderClass:
     {
 
-        width: 130,
-        height: 130,
-        borderWidth: 4,
+        width: 140,
+        height: 140,
+        borderWidth: 1,
         borderColor: 'black',
         marginTop:10,
         marginLeft:10
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
      defaultButton1:{
        
          backgroundColor:'#a1f0b0',
-         marginTop:8,
+         marginTop:5,
          marginLeft:50,
          marginRight:50,
          padding:9,
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
         marginLeft:180,
         marginRight:10,
         marginTop:-100,
-        padding:8,
+        padding:9,
         borderRadius:15
 
 

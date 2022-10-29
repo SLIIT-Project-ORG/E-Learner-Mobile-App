@@ -14,9 +14,7 @@ const FView = () => {
         <View style={styles.container}>
           <Text style={styles.title}>FEEDBACK VIEW</Text>
         </View>
-
-        
-        <View style={styles.box} >
+            <View style={styles.box} >
             <View><Image source={profile} style={styles.BorderClass1}></Image></View>
            
             <View><Text style={styles.label}>Admin User</Text></View>
