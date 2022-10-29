@@ -4,7 +4,7 @@ import AppBarComponent from '../Common/AppBarComponent';
 import profile from '../../../assets/profile.png'
 
 
-const FView = () => {
+const FeedbackView = () => {
   return (
     <SafeAreaView>
       <ScrollView>
@@ -113,4 +113,4 @@ const styles = StyleSheet.create({
 
 
 })
-export default FView;
+export default FeedbackView;

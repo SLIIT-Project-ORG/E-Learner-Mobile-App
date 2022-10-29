@@ -12,6 +12,18 @@ import ProfileUpdate from './src/screens/User_Mgmt/UpdateProfile';
 import Profile from './src/screens/User_Mgmt/UserProfile';
 import AddVideos from './src/screens/Video_Upload_Mgmt/AddVideoDetails';
 import ManageVideos from './src/screens/Video_Upload_Mgmt/ManageVideos';
+import CourseStep from './src/screens/Course_Mgmt/CourseStep';
+import AvailableCourses from './src/screens/Course_Mgmt/AvailableCourses';
+import DeleteCourses from './src/screens/Course_Mgmt/DeleteCourses';
+import CourseIntro from './src/screens/Course_Mgmt/CourseIntro';
+import Feedback from './src/screens/Course_Mgmt/Feedback';
+import FeedbackView from './src/screens/Course_Mgmt/FeedbackView';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Screen from 'react-native-screens';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
@@ -53,35 +65,31 @@ export default function App() {
       <AddVideos />
     </View>,
     <View>
-      <PostDelete/>
-    </View>,
-
-   <View>
       <PostDelete />
     </View>,
 
+    <View>
+      <PostDelete />
+    </View>,
 
     <View>
-      <CourseStep />
+      <AvailableCourses/>
     </View>,
     <View>
-      <Acourses />
+      <DeleteCourses/>
     </View>,
     <View>
-      <Dcourses />
-    </View>,
-    <View>
-      <Icourses />
+      <CourseIntro />
     </View>,
     <View>
       <Feedback />
     </View>,
     <View>
-      <FView />
+      <FeedbackView />
     </View>,
-    <View>
-      <AddPost />
-    </View>,
+      <View>
+        <AddPost />
+      </View>,
 
     <View>
       <PostView />
@@ -93,6 +101,17 @@ export default function App() {
       <ManageVideos />
     </View>
 
+    // <NavigationContainer>
+
+    //   <Stack.Navigator initialRouteName='AvailableCourses'>
+    //     <Stack.Screen name='AvailableCourses' component={AvailableCourses} />
+    //     <Stack.Screen name='CourseStep' component={CourseStep} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+
+    // <View>
+    //   <CourseStep/>
+    // </View>
 
   );
 }

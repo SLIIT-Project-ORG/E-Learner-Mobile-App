@@ -1,31 +1,66 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity,Image } from 'react-native';
+import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import AppBarComponent from '../Common/AppBarComponent';
 import java from '../../../assets/CM_java.png'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import CourseStep from './CourseStep';
 
-const Acourses = () => {
+const AvailableCourses = () => {
+
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/course/${id}`)
+      .then((res) => {
+        setCourses(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+
   return (
     <SafeAreaView>
       <ScrollView>
-   
-     <AppBarComponent/>
-    
+
+        <AppBarComponent />
+
         <View style={styles.container}>
           <Text style={styles.title}>AVAILABLE COURSES</Text>
         </View>
 
-        <View style={styles.box} >
-            <View><Image source={java} style={styles.BorderClass1} ></Image></View>
-           
-            <View><Text style={styles.label}>JAVA PROGRAMMING</Text></View>
 
-          <View>
-            <TouchableOpacity style={styles.defaultButton1} >
-              <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> ENROLL NOW</Text>
-            </TouchableOpacity>
-          </View>
 
-        </View>
+        {
+
+          courses.map((value, index) => {
+
+            return (
+
+              <View style={styles.box} >
+                <View><Image source={java} style={styles.BorderClass1} ></Image></View>
+
+                <View><Text style={styles.label}>{value.name}</Text></View>
+
+                <View>
+                  <TouchableOpacity style={styles.defaultButton1} >
+                    <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> ENROLL NOW</Text>
+                  </TouchableOpacity>
+                </View>
+
+              </View>
+
+            )
+
+          })
+
+        }
+
+
+
+
       </ScrollView>
     </SafeAreaView>
 
@@ -43,7 +78,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-    padding:10
+    padding: 10
 
   },
   container: {
@@ -81,21 +116,21 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 15,
     fontWeight: 'bold',
-    fontSize:16
+    fontSize: 16
 
   },
 
   BorderClass1:
   {
 
-      width: 100,
-      height: 100,
-      borderWidth: 2,
-      borderColor: 'darkgray',
-      borderRadius:10,
-      marginTop:10,
-      marginLeft:10,
-      marginRight:10
+    width: 100,
+    height: 100,
+    borderWidth: 2,
+    borderColor: 'darkgray',
+    borderRadius: 10,
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10
   }
 
 
@@ -103,4 +138,4 @@ const styles = StyleSheet.create({
 
 
 })
-export default Acourses;
+export default AvailableCourses;
