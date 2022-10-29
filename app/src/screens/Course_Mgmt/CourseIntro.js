@@ -1,35 +1,51 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity,Image } from 'react-native';
+import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import AppBarComponent from '../Common/AppBarComponent';
 import java from '../../../assets/CM_java.png'
 
-const Icourses = () => {
+const CourseIntro = () => {
+
+  const id = "63598508a7bcb122ca347b9e";
+
+  const [content, setContent] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/course/${id}`)
+      .then((res) => {
+        setContent(res.data.course);
+        console.log(res.data.course);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+
   return (
     <SafeAreaView>
       <ScrollView>
-   
-     <AppBarComponent/>
-    
+
+        <AppBarComponent />
+
         <View style={styles.box1}>
           <Text style={styles.title}>INTRODUCTION</Text>
           <Text style={styles.title1}>Catogory Programming </Text>
           <Text style={styles.title2}>Created By Admin </Text>
         </View>
 
-         <View style={styles.box} >
-            <View><Image source={java} style={styles.BorderClass1} ></Image></View>
-           
-            <View><Text style={styles.label}>INTRODUCTION</Text></View>
+        <View style={styles.box} >
+          <View><Image source={java} style={styles.BorderClass1} ></Image></View>
 
-          
+          <View><Text style={styles.label}>INTRODUCTION</Text></View>
+
+
         </View>
 
         <View>
-            <TouchableOpacity style={styles.defaultButton1} >
-              <Text style={{ fontWeight: 'bold', fontSize: 26, color: 'white', textAlign: 'center' }}> COMPLETED </Text>
-            </TouchableOpacity>
-          </View>
-       
+          <TouchableOpacity style={styles.defaultButton1} >
+            <Text style={{ fontWeight: 'bold', fontSize: 26, color: 'white', textAlign: 'center' }}> COMPLETED </Text>
+          </TouchableOpacity>
+        </View>
+
 
       </ScrollView>
     </SafeAreaView>
@@ -47,10 +63,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-   
+
 
   },
-   title1: {
+  title1: {
 
     fontSize: 25,
     textAlign: 'center',
@@ -58,7 +74,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 5,
-  
+
 
   },
   title2: {
@@ -68,7 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 60,
     marginTop: 10,
-  
+
 
   },
   container: {
@@ -107,21 +123,21 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     fontWeight: 'bold',
-   
+
 
   },
 
   BorderClass1:
   {
 
-      width: 100,
-      height: 100,
-      borderWidth: 2,
-      borderColor: 'white',
-      borderRadius:10,
-      marginTop:10,
-      marginLeft:10,
-      marginRight:10
+    width: 100,
+    height: 100,
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 10,
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10
   },
   box1: {
 
@@ -132,7 +148,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 10,
     marginRight: 50,
-    
+
     borderWidth: 2,
 
 
@@ -143,4 +159,4 @@ const styles = StyleSheet.create({
 
 
 })
-export default Icourses;
+export default CourseIntro;
