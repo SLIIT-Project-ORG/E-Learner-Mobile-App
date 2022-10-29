@@ -32,10 +32,6 @@ const Feedback = () => {
                 
                 <TextInput style={styles.inputfields} placeholder='Enter Subject Name'/>
                 </View>
-
-
-              
-            
             
            <View>
             <TouchableOpacity style={styles.defaultButton} >
