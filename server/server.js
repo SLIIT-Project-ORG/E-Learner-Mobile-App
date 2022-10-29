@@ -12,9 +12,11 @@ app.use(cors());
 
 const course = require("./routes/Course_Mgmt/courses.js");
 const VideoDetailsManage= require("./routes/Video_Upload_Mgmt/VideoDetails");
+const postDetails = require("./routes/Post_Mgmt/postDetails.js");
 
 app.use("/course",course);
 app.use("/videodetails",VideoDetailsManage);
+app.use("/posts",postDetails);
 
 app.listen(PORT,()=>{
     console.log(`App is running on port ${PORT}`);
