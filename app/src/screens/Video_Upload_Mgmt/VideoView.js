@@ -22,7 +22,7 @@ const AllVideos = () => {
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/videodetails/`)
+      .get(`http://localhost:8000/videodetails/`)
       .then((videodetails) => {
         setvideodetails(videodetails.data);
         console.log(videodetails.data);
@@ -34,7 +34,7 @@ const AllVideos = () => {
 
   function deletevideo(id) {
     axios
-      .delete(`http://localhost:5000/videodetails/delete/${id}`)
+      .delete(`http://localhost:8000/videodetails/delete/${id}`)
       .then(() => {
         alert("Deleted Successfully");
       })

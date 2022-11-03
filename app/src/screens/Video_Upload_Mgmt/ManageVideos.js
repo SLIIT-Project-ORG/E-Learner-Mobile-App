@@ -17,12 +17,12 @@ import {
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 
-const ManageVideos = () => {
+const ManageVideos = ({navigation}) => {
   const [videodetails, setvideodetails] = useState([]);
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/videodetails/`)
+      .get(`http://localhost:8000/videodetails/`)
       .then((videodetails) => {
         setvideodetails(videodetails.data);
         console.log(videodetails.data);
@@ -34,7 +34,7 @@ const ManageVideos = () => {
 
   function deletevideo(id) {
     axios
-      .delete(`http://localhost:5000/videodetails/delete/${id}`)
+      .delete(`http://localhost:8000/videodetails/delete/${id}`)
       .then(() => {
         alert("Deleted Successfully");
       })
@@ -75,7 +75,7 @@ const ManageVideos = () => {
       <View style={styles.container}>
         <Text style={styles.myTitle2}>Manage Videos</Text>
       </View>
-      <View>
+      <View style={styles.container}>
         <TextInput
           style={styles.inputfields}
           onChange={(e) => {
@@ -87,7 +87,7 @@ const ManageVideos = () => {
       <ScrollView>
         {videodetails
           .filter((value) => {
-            if (searchData === "") {
+            if (searchData == "") {
               return value;
             } else if (
               value.title.toLowerCase().includes(searchData.toLowerCase())
@@ -125,8 +125,14 @@ const ManageVideos = () => {
                       marginLeft: 0,
                       marginRight: 0,
                       marginBottom: 2,
+
                     }}
                     title="UPDATE VIDEO DETAILS"
+                    onPress={() =>
+                      navigation.navigate('UpdateVideoDetails', {
+                        paramKey:val._id,
+                      })
+                    }
                   />
                   <Button
                     buttonStyle={{
@@ -153,7 +159,7 @@ const styles = StyleSheet.create({
   
   container: {
     backgroundColor: "white"
-    ,
+    
   },
   myTitle: {
     fontSize: 40,

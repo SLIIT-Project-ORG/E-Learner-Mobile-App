@@ -28,7 +28,7 @@ const AddVideos = () => {
     };
     //console.log(newfueldetail);
     axios
-      .post("http://localhost:5000/videodetails/add", newfueldetail)
+      .post("http://localhost:8000/videodetails/add", newfueldetail)
       .then(() => {
         alert("video Detais added");
       })

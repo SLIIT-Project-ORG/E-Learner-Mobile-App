@@ -18,88 +18,31 @@ import DeleteCourses from './src/screens/Course_Mgmt/DeleteCourses';
 import CourseIntro from './src/screens/Course_Mgmt/CourseIntro';
 import Feedback from './src/screens/Course_Mgmt/Feedback';
 import FeedbackView from './src/screens/Course_Mgmt/FeedbackView';
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetails';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import Screen from 'react-native-screens';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View>
-      <Home />
-    </View>,
-    <View>
-      <Login />
-    </View>,
-    <View>
-      <SignIn />
-    </View>,
-    <View>
-      <ForgetPassword />
-    </View>,
-    <View>
-      <ChangePassword />
-    </View>,
-    <View>
-      <ProfileUpdate />
-    </View>,
-    <View>
-      <Profile />
-    </View>,
-    <View>
-
-      <Profile />
-    </View>,
-    <View>
-      <AddPost />
-    </View>,
-    <View>
-      <PostView />
-    </View>,
-    <View>
-      <UpdatePost />
-    </View>,
-    <View>
-      <AddVideos />
-    </View>,
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <AvailableCourses/>
-    </View>,
-    <View>
-      <DeleteCourses/>
-    </View>,
-    <View>
-      <CourseIntro />
-    </View>,
-    <View>
-      <Feedback />
-    </View>,
-    <View>
-      <FeedbackView />
-    </View>,
-      <View>
-        <AddPost />
-      </View>,
-
-    <View>
-      <PostView />
-    </View>,
-    <View>
-      <AddVideos />
-    </View>,
-    <View>
-      <ManageVideos />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ManageVideos">
+        <Stack.Screen
+          name="ManageVideos"
+          component={ManageVideos}
+        />
+        <Stack.Screen
+          name="AddVideos"
+          component={AddVideos}
+        />
+        <Stack.Screen
+          name="UpdateVideoDetails"
+          component={UpdateVideoDetails}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
 
     // <NavigationContainer>
 
