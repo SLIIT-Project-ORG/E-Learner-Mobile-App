@@ -24,6 +24,10 @@ import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetai
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
+import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
+import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
+import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
+import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
 
 const Stack = createStackNavigator();
 
@@ -73,40 +77,15 @@ export default function App() {
       <PostDelete />
     </View>,
 
-    <View>
-      <PostDelete />
-    </View>,
+   
 
     <View>
       <AddPost />
     </View>,
+    
 
 
-    // <View>
-    // <CourseStep />
-    // </View>,
-
-    // <View>
-    // <Acourses />
-    // </View>,
-
-    // <View>
-    //  <Dcourses />
-    // </View>
-
-    // <View>
-    // <Icourses />
-    // </View>,
-
-    //   <View>
-    //    <Feedback />
-    //   </View>,
-
-    //   <View>
-    //   <FView />
-    //   </View>, 
-
-
+    
     //  <View>
     //  <AddVideos />
     //  </View>,
@@ -143,7 +122,7 @@ export default function App() {
           component={UpdateVideoDetails}
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>,
 
     // <NavigationContainer>
 
@@ -153,9 +132,46 @@ export default function App() {
     //   </Stack.Navigator>
     // </NavigationContainer>
 
-    // <View>
-    //   <CourseStep/>
-    // </View>
+    
+
+    <View>
+      <AddArticles/>
+    </View>,
+    <View>
+      <ArticleView/>
+    </View>,
+    <View>
+      <UpdateArticles/>
+    </View>,
+    <View>
+      <DeleteArticle/>
+    </View>,
+     <View>
+    <CourseStep/>
+    </View>,
+     
+    <View>
+    <AvailableCourses/>
+    </View>,
+
+    <View>
+     <DeleteCourses />
+    </View>,
+
+    <View>
+    <CourseIntro />
+    </View>,
+
+      <View>
+       <Feedback />
+      </View>,
+
+      <View>
+      <FView />
+      </View>
+
+
+   
 
   );
 }
