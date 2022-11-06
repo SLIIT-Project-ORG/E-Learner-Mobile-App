@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity,Imag
 import AppBarComponent from '../Common/AppBarComponent';
 import java from '../../../assets/CM_java.png'
 
-const Dcourses = () => {
+const DeleteCourses = () => {
   return (
     <SafeAreaView>
       <ScrollView>
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
 
 
 })
-export default Dcourses;
+export default DeleteCourses;

@@ -12,25 +12,25 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const AddVideos = () => {
-  const [title, settitle] = useState("");
-  const [link, setlink] = useState("");
-  const [thumbnaillink, setthumbnaillink] = useState("");
+const AddArticles = () => {
+  const [topic, settopic] = useState("");
   const [description, setdescription] = useState("");
+  const [thumbnaillink, setthumbnaillink] = useState("");
+  const [authors, setauthors] = useState("");
 
   function sendData(e) {
     e.preventDefault();
-    const newfueldetail = {
-      title,
-      link,
-      thumbnaillink,
+    const newArticle = {
+      topic,
       description,
+      thumbnaillink,
+      authors,
     };
-    //console.log(newfueldetail);
+    
     axios
-      .post("http://localhost:8000/videodetails/add", newfueldetail)
+      .post("http://localhost:5000/articles/submit", newArticle)
       .then(() => {
-        alert("video Detais added");
+        alert("Article Added Successfylly Detais added");
       })
       .catch((err) => {
         alert(err);
@@ -44,28 +44,28 @@ const AddVideos = () => {
           <Text style={styles.myTitle}>E- Learner</Text>
         </View>
         <View style={styles.container}>
-          <Text style={styles.myTitle2}>Add Videos</Text>
+          <Text style={styles.myTitle2}>Add Articles</Text>
         </View>
 
         <View>
-          <Text style={styles.label}>Video Title</Text>
+          <Text style={styles.label}>Topic of the Article</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              settitle(e.target.value);
+              settopic(e.target.value);
             }}
-            placeholder="Video Tital"
+            placeholder="Topic of the Article"
           />
         </View>
 
         <View>
-          <Text style={styles.label}> Video Link</Text>
+          <Text style={styles.label}> Description</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              setlink(e.target.value);
+              setdescription(e.target.value);
             }}
-            placeholder=" Video Link"
+            placeholder=" Write the description of the Article"
           />
         </View>
         <View>
@@ -79,13 +79,13 @@ const AddVideos = () => {
           />
         </View>
         <View>
-          <Text style={styles.label}>Description</Text>
+          <Text style={styles.label}>Authors</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              setdescription(e.target.value);
+              setauthors(e.target.value);
             }}
-            placeholder="Description"
+            placeholder="Mention Authors"
           />
         </View>
         <View>
@@ -170,4 +170,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddVideos;
+export default AddArticles;

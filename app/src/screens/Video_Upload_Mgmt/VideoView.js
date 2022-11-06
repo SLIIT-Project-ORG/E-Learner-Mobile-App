@@ -17,7 +17,7 @@ import {
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 
-const ManageVideos = ({navigation}) => {
+const AllVideos = () => {
   const [videodetails, setvideodetails] = useState([]);
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
@@ -58,13 +58,19 @@ const ManageVideos = ({navigation}) => {
       }
     }, [url]);
 
-    return <Button title="VIEW" onPress={handlePress} buttonStyle={{
-      padding:10,               
-      borderRadius: 0,
-      marginLeft: 0,
-      marginRight: 0,
-      marginBottom: 2,
-    }} />;
+    return (
+      <Button
+        title="VIEW"
+        onPress={handlePress}
+        buttonStyle={{
+          padding: 10,
+          borderRadius: 0,
+          marginLeft: 0,
+          marginRight: 0,
+          marginBottom: 2,
+        }}
+      />
+    );
   };
 
   return (
@@ -73,9 +79,9 @@ const ManageVideos = ({navigation}) => {
         <Text style={styles.myTitle}>E- Learner</Text>
       </View>
       <View style={styles.container}>
-        <Text style={styles.myTitle2}>Manage Videos</Text>
+        <Text style={styles.myTitle2}>Videos</Text>
       </View>
-      <View style={styles.container}>
+      <View>
         <TextInput
           style={styles.inputfields}
           onChange={(e) => {
@@ -87,7 +93,7 @@ const ManageVideos = ({navigation}) => {
       <ScrollView>
         {videodetails
           .filter((value) => {
-            if (searchData == "") {
+            if (searchData === "") {
               return value;
             } else if (
               value.title.toLowerCase().includes(searchData.toLowerCase())
@@ -109,7 +115,6 @@ const ManageVideos = ({navigation}) => {
                   <OpenURLButton
                     url={val.link}
                     buttonStyle={{
-                      
                       borderRadius: 0,
                       marginLeft: 0,
                       marginRight: 0,
@@ -117,35 +122,6 @@ const ManageVideos = ({navigation}) => {
                     }}
                     title="VIEW"
                   ></OpenURLButton>
-                  <Button
-                    buttonStyle={{
-                      backgroundColor: "#1fbf3f",
-
-                      borderRadius: 0,
-                      marginLeft: 0,
-                      marginRight: 0,
-                      marginBottom: 2,
-
-                    }}
-                    title="UPDATE VIDEO DETAILS"
-                    onPress={() =>
-                      navigation.navigate('UpdateVideoDetails', {
-                        paramKey:val._id,
-                      })
-                    }
-                  />
-                  <Button
-                    buttonStyle={{
-                      backgroundColor: "gray",
-
-                      borderRadius: 0,
-                      marginLeft: 0,
-                      marginRight: 0,
-                      marginBottom: 2,
-                    }}
-                    title="DELETE VIDEO"
-                    onPress={() => deletevideo(val._id)}
-                  />
                 </Card>
               </View>
             );
@@ -156,10 +132,8 @@ const ManageVideos = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  
   container: {
-    backgroundColor: "white"
-    
+    backgroundColor: "white",
   },
   myTitle: {
     fontSize: 40,
@@ -223,4 +197,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ManageVideos;
+export default AllVideos;
