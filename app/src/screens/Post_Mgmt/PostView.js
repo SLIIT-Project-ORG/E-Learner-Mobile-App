@@ -1,74 +1,36 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Text, View, StyleSheet, TouchableOpacity } from "react-native";
-
+import { SafeAreaView, ScrollView, Text, View, StyleSheet, TouchableOpacity,Image } from "react-native";
+import AppBarComponent from "../Common/AppBarComponent";
+import table from '../../../assets/table.png'
 
 const PostView = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-
-        <View>
+      <AppBarComponent/>
+      <View style={Styles.container}>
           <Text style={Styles.title}>POST VIEW</Text>
         </View>
 
-        <View style={Styles.defaultButton1}>
-          <TouchableOpacity style={{ fontSize: 20, color: 'black', textAlign: 'center' }}>ADD NEW</TouchableOpacity>
-        </View>
-        <View style={Styles.box}>  <IconButton icon={props => <Icon name="eye" {...props} />} /></View>
-
-
-
-        <View style={Styles.box} >
+         <View style={Styles.box}>
+            <View><Image source={table} style={Styles.BorderClass1} ></Image>
+            </View>
+           
+            <View><Text style={Styles.label}>Periodic table</Text></View>
 
           <View>
             <TouchableOpacity style={Styles.defaultButton1} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> VIEW</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> DOWNLOAD NOW</Text>
             </TouchableOpacity>
           </View>
+
 
           <View>
             <TouchableOpacity style={Styles.defaultButton2} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> DOWNLOAD</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> VIEW</Text>
             </TouchableOpacity>
           </View>
-
-        </View>
-
-        <View style={Styles.box} >
-
-          <View>
-            <TouchableOpacity style={Styles.defaultButton1} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> VIEW</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View>
-            <TouchableOpacity style={Styles.defaultButton2} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> DOWNLOAD</Text>
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-        <View style={Styles.box} >
-
-          <View>
-            <TouchableOpacity style={Styles.defaultButton1} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> VIEW</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View>
-            <TouchableOpacity style={Styles.defaultButton2} >
-              <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> DOWNLOAD</Text>
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-        <View style={Styles.box}> </View>
-        <View style={Styles.box}> </View>
-
+         </View>
 
       </ScrollView>
     </SafeAreaView>
@@ -76,88 +38,85 @@ const PostView = () => {
 }
 
 const Styles = StyleSheet.create({
+ 
   title: {
-    fontSize: 40,
+
+    fontSize: 30,
     textAlign: 'center',
+    color: 'black',
     fontWeight: 'bold',
     backgroundColor: '#1fbf3f',
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-    padding: 10,
+    padding:10
+
+  },
+  container: {
+    backgroundColor: 'white',
+  },
+  label: {
+    fontSize: 20,
+    marginTop: -100,
+    marginLeft: 100,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: 'black'
+
   },
   box: {
+
     backgroundColor: 'lightgray',
     height: 150,
     width: 340,
-    borderColor: 'white',
-    marginTop: 10,
+    borderColor: 'gray',
+    marginTop: 20,
     marginLeft: 10,
     marginRight: 50,
-    borderRadius: 15,
+    borderRadius: 10,
     borderWidth: 2,
+
+
   },
   defaultButton1: {
-    backgroundColor: '#4d88ff',
-    marginTop: 10,
-    marginLeft: 120,
-    marginRight: 20,
+
+    backgroundColor: '#1fbf3f',
+    marginTop: -60,
+    marginLeft: 130,
+    marginRight: 30,
     padding: 10,
     borderRadius: 15,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize:16
+
   },
+
   defaultButton2: {
-    backgroundColor: '#33ff77',
-    marginTop: 10,
-    marginLeft: 120,
-    marginRight: 20,
+
+    backgroundColor: '#99e6ff',
+    marginTop: -10,
+    marginLeft: 130,
+    marginRight: 30,
     padding: 10,
     borderRadius: 15,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize:16
+
   },
 
-    title:{
+  BorderClass1:
+  {
 
-        fontSize:40,
-        textAlign:'center',
-       fontWeight:'bold',
-        backgroundColor:'#1fbf3f',
-        marginLeft:10,
-        marginRight:10,
-        marginTop:10,
-        padding:10,
+      width: 100,
+      height: 100,
+      borderWidth: 2,
+      borderColor: 'darkgray',
+      borderRadius:10,
+      marginTop:10,
+      marginLeft:10,
+      marginRight:10
+  }
 
-
-
-},
-box:{
-
-     backgroundColor:'lightgray',
-     height:150,
-     width:340,
-     borderColor:'black',
-     marginTop:10,
-     marginLeft:10,
-     marginRight:50,
-     borderRadius:10,
-     borderWidth: 2,
-
-
-},
-defaultButton1:{
-
-  backgroundColor:'#a1f0b0',
-  marginTop:20,
-  marginLeft:120,
-  marginRight:20,
-  padding:15,
-  borderRadius:15,
-  fontWeight:'bold',
-  marginBottom:30,
-
-
-
-}
 
 
 })

@@ -1,13 +1,16 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import logo from '../../../assets/logo.png';
+import AppBarComponent from "../Common/AppBarComponent";
 
 const ForgetPassword = () => {
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
+            
             <ScrollView>
+                <AppBarComponent/>
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={logo} style={styles.BorderClass} />
                 </View>
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
     defaultButton: {
 
         backgroundColor: '#1fbf3f',
-        marginTop: 70,
+        marginTop: 40,
         marginLeft: 50,
         marginRight: 50,
         padding: 15,
@@ -100,7 +103,7 @@ const styles = StyleSheet.create({
     defaultButton1: {
 
         backgroundColor: 'gray',
-        marginTop: 20,
+        marginTop: 10,
         marginLeft: 50,
         marginRight: 50,
         padding: 15,
