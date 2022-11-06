@@ -24,7 +24,7 @@ import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetai
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
-
+import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -141,6 +141,10 @@ export default function App() {
         <Stack.Screen
           name="UpdateVideoDetails"
           component={UpdateVideoDetails}
+        />
+        <Stack.Screen
+          name="AllVideos"
+          component={AllVideos}
         />
       </Stack.Navigator>
     </NavigationContainer>
