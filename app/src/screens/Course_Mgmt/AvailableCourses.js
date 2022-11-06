@@ -10,6 +10,8 @@ const AvailableCourses = () => {
 
   const [courses, setCourses] = useState([]);
 
+  const id = "63598508a7bcb122ca347b9e";
+
   useEffect(() => {
     axios.get(`http://localhost:8000/course/${id}`)
       .then((res) => {

@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const AddArticles = () => {
+const UpdateArticles = () => {
   const [topic, settopic] = useState("");
   const [description, setdescription] = useState("");
   const [thumbnaillink, setthumbnaillink] = useState("");
@@ -44,7 +44,7 @@ const AddArticles = () => {
           <Text style={styles.myTitle}>E- Learner</Text>
         </View>
         <View style={styles.container}>
-          <Text style={styles.myTitle2}>Add Articles</Text>
+          <Text style={styles.myTitle2}>UPDATE ARTICLES</Text>
         </View>
 
         <View>
@@ -90,8 +90,14 @@ const AddArticles = () => {
         </View>
         <View>
           <TouchableOpacity style={styles.defaultButton}>
-            <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}} onPress={sendData}>
-              Submit
+            <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}>
+              Update
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.defaultButton1}>
+            <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}>
+              Cancel
             </Text>
           </TouchableOpacity>
         </View>
@@ -105,12 +111,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
   },
-
   myTitle: {
     fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
-    color: "green",
+    color: "#2fa347",
   },
   myTitle2: {
     fontSize: 30,
@@ -161,14 +166,14 @@ const styles = StyleSheet.create({
  
   },
   defaultButton1: {
-    backgroundColor:'#a1f0b0',
+    backgroundColor:'gray',
     marginTop:10,
     marginLeft:60,
-    marginRight:20,
+    marginRight:40,
     padding:10,
     borderRadius:15
 
   },
 });
 
-export default AddArticles;
+export default UpdateArticles;

@@ -24,8 +24,15 @@ import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetai
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
+
 import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
 import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
+
+import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
+import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
+import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
+import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
+
 
 const Stack = createStackNavigator();
 
@@ -55,6 +62,7 @@ export default function App() {
     //   <ProfileUpdate />
     // </View>,
 
+
     // <View>
     //   <Profile />
     // </View>,
@@ -63,9 +71,18 @@ export default function App() {
     //   <PostView />
     // </View>,
 
+   
+
+    <View>
+      <AddPost />
+    </View>,
+    
+
+
     // <View>
     //   <UpdatePost />
     // </View>,
+
 
     // <View>
     //   <AddVideos />
@@ -95,6 +112,12 @@ export default function App() {
     // // <View>
     // //  <Dcourses />
     // // </View>
+
+    
+    //  <View>
+    //  <AddVideos />
+    //  </View>,
+
 
     // // <View>
     // // <Icourses />
@@ -153,7 +176,7 @@ export default function App() {
           component={AddComments}
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>,
 
     // <NavigationContainer>
 
@@ -163,9 +186,46 @@ export default function App() {
     //   </Stack.Navigator>
     // </NavigationContainer>
 
-    // <View>
-    //   <CourseStep/>
-    // </View>
+    
+
+    <View>
+      <AddArticles/>
+    </View>,
+    <View>
+      <ArticleView/>
+    </View>,
+    <View>
+      <UpdateArticles/>
+    </View>,
+    <View>
+      <DeleteArticle/>
+    </View>,
+     <View>
+    <CourseStep/>
+    </View>,
+     
+    <View>
+    <AvailableCourses/>
+    </View>,
+
+    <View>
+     <DeleteCourses />
+    </View>,
+
+    <View>
+    <CourseIntro />
+    </View>,
+
+      <View>
+       <Feedback />
+      </View>,
+
+      <View>
+      <FView />
+      </View>
+
+
+   
 
   );
 }

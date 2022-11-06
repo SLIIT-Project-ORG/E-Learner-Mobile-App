@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import AppBarComponent from '../Common/AppBarComponent';
 import java from '../../../assets/CM_java.png'
