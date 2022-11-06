@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
-import login from '../../../assets/login.png';
+import table from '../../../assets/table.png';
+import AppBarComponent from '../Common/AppBarComponent';
 
 
 const UpdatePost = ()=> {
@@ -8,12 +9,12 @@ const UpdatePost = ()=> {
 
     <SafeAreaView>
     <ScrollView>
-            
+             <AppBarComponent/>
             <View  style={styles.container}>
-            <Text style ={styles.title}>Update POST</Text>
+            <Text style ={styles.title}>UPDATE POST</Text>
            
                <View  style={styles.container}>
-               <Image source={login} style={styles.BorderClass} />
+               <Image source={table} style={styles.BorderClass} />
                </View>
 
             <View>
@@ -73,7 +74,9 @@ title:{
     textAlign:'center',
     color:'black',
     fontWeight:'bold',
-    backgroundColor:'#1fbf3f'
+    backgroundColor:'#1fbf3f',
+    marginLeft:10,
+    marginRight:10
 
 },
 container:{
@@ -93,10 +96,10 @@ inputfields:{
  
     borderColor:'a7a7',
     borderWidth:1,
-    padding:10,
+    padding:5,
     fontSize:16,
     borderRadius:10,
-    marginTop:10,
+    marginTop:5,
     marginLeft:30,
     marginRight:30,
     
@@ -117,7 +120,7 @@ defaultButton:{
     marginTop:10,
     marginLeft:50,
     marginRight:50,
-    padding:15,
+    padding:10,
     borderRadius:15
 
 
@@ -128,7 +131,7 @@ defaultButton:{
      marginTop:10,
      marginLeft:50,
      marginRight:50,
-     padding:15,
+     padding:10,
      borderRadius:15
 
 

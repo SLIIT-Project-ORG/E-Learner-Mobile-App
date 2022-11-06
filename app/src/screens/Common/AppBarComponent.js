@@ -5,8 +5,8 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 const AppBarComponent = () => (
   <AppBar
     title="E-LEARNER"
-    color="pink"
-    tintColor="red"
+    color="#80dfff"
+    tintColor="black"
     leading={props => (
       <IconButton icon={props => <Icon name="menu" {...props} />} {...props} />
     )}

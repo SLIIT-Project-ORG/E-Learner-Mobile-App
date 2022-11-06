@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
+import FView from './src/screens/Course_Mgmt/FeedbackView';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostDelete from './src/screens/Post_Mgmt/PostDelete';
 import PostView from './src/screens/Post_Mgmt/PostView';
+import PostViewById from './src/screens/Post_Mgmt/PostViewById';
 import UpdatePost from './src/screens/Post_Mgmt/UpdatePost';
 import ChangePassword from './src/screens/User_Mgmt/ChangePassword';
 import ForgetPassword from './src/screens/User_Mgmt/ForgetPassword';
@@ -19,14 +21,113 @@ import CourseIntro from './src/screens/Course_Mgmt/CourseIntro';
 import Feedback from './src/screens/Course_Mgmt/Feedback';
 import FeedbackView from './src/screens/Course_Mgmt/FeedbackView';
 import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetails';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
+    <View>
+      <Home />
+    </View>,
+
+    <View>
+      <Login />
+    </View>,
+
+    <View>
+      <SignIn />
+    </View>,
+
+    <View>
+      <ForgetPassword />
+    </View>,
+
+    <View>
+      <ChangePassword />
+    </View>,
+
+    <View>
+      <ProfileUpdate />
+    </View>,
+
+    <View>
+      <Profile />
+    </View>,
+
+    <View>
+      <PostView />
+    </View>,
+
+    <View>
+      <UpdatePost />
+    </View>,
+
+    <View>
+      <AddVideos />
+    </View>,
+
+    <View>
+      <PostDelete />
+    </View>,
+
+    <View>
+      <PostDelete />
+    </View>,
+
+    <View>
+      <AddPost />
+    </View>,
+
+
+    // <View>
+    // <CourseStep />
+    // </View>,
+
+    // <View>
+    // <Acourses />
+    // </View>,
+
+    // <View>
+    //  <Dcourses />
+    // </View>
+
+    // <View>
+    // <Icourses />
+    // </View>,
+
+    //   <View>
+    //    <Feedback />
+    //   </View>,
+
+    //   <View>
+    //   <FView />
+    //   </View>, 
+
+
+    //  <View>
+    //  <AddVideos />
+    //  </View>,
+
+    //  <View>
+    //  <ManageVideos />
+    // </View>,
+
+    <View>
+      <AddPost />
+    </View>,
+
+    <View>
+      <PostView />
+    </View>,
+
+    <View>
+      <PostViewById />
+    </View>,
+
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="ManageVideos">
         <Stack.Screen

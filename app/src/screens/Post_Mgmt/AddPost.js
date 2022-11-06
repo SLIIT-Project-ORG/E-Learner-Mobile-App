@@ -1,14 +1,13 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
+import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity,} from 'react-native'
 import table from '../../../assets/table.png';
 import AppBarComponent from '../Common/AppBarComponent';
-import login from '../../../assets/login.png';
 
 const AddPost = () => {
  return(
     <SafeAreaView>
         <ScrollView>
-
+               <AppBarComponent/>
                
                 <View  style={styles.container}>
                 <Text style ={styles.title}>ADD POST</Text>
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
 
     title:{
      
-        fontSize:40,
+        fontSize:30,
         textAlign:'center',
         color:'black',
         fontWeight:'bold',
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
      
         borderColor:'a7a7',
         borderWidth:1,
-        padding:10,
+        padding:8,
         fontSize:16,
         borderRadius:10,
         marginTop:10,
@@ -103,8 +102,8 @@ const styles = StyleSheet.create({
     },
     BorderClass:
     {
-        width: 140,
-        height: 140,
+        width: 100,
+        height: 100,
         borderWidth: 1,
         width: 150,
         height: 150,
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         marginLeft:50,
         marginRight:50,
-        padding:15,
+        padding:10,
         borderRadius:15
  
  
@@ -131,7 +130,7 @@ const styles = StyleSheet.create({
          marginTop:10,
          marginLeft:50,
          marginRight:50,
-         padding:15,
+         padding:10,
          borderRadius:15
   
   

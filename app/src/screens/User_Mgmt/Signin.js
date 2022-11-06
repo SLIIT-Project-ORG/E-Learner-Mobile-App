@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
+import AppBarComponent from "../Common/AppBarComponent";
 
 
 const SignIn = () => {
@@ -8,7 +9,7 @@ const SignIn = () => {
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-
+             <AppBarComponent/>
                 <View>
                     <Text style={styles.label}>First Name</Text>
                     <TextInput style={styles.inputfields} />
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
 
         borderColor: 'gray',
         borderWidth: 1,
-        padding: 10,
+        padding: 8,
         fontSize: 16,
         borderRadius: 10,
         marginTop: 5,
@@ -119,10 +120,10 @@ const styles = StyleSheet.create({
     defaultButton: {
 
         backgroundColor: '#1fbf3f',
-        marginTop: 10,
+        marginTop: 8,
         marginLeft: 50,
         marginRight: 50,
-        padding: 15,
+        padding: 8,
         borderRadius: 15
 
 
@@ -130,10 +131,10 @@ const styles = StyleSheet.create({
     defaultButton1: {
 
         backgroundColor: '#a1f0b0',
-        marginTop: 10,
+        marginTop: 8,
         marginLeft: 50,
         marginRight: 50,
-        padding: 15,
+        padding: 8,
         borderRadius: 15
 
 
