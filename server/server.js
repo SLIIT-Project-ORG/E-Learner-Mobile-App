@@ -14,11 +14,13 @@ const course = require("./routes/Course_Mgmt/courses.js");
 const VideoDetailsManage= require("./routes/Video_Upload_Mgmt/VideoDetails");
 const postDetails = require("./routes/Post_Mgmt/postDetails.js");
 const articles = require("./routes/File_Upload_Mgmt/ArticleRoutes.js");
+const videocomments=require("./routes/Video_Upload_Mgmt/VideoComments")
 
 app.use("/course",course);
 app.use("/videodetails",VideoDetailsManage);
 app.use("/posts",postDetails);
 app.use("/articles",articles);
+app.use("/comments",videocomments);
 
 app.listen(PORT,()=>{
     console.log(`App is running on port ${PORT}`);
