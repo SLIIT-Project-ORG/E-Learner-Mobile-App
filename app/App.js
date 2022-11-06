@@ -25,111 +25,113 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
 import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
+import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View>
-      <Home />
-    </View>,
-
-    <View>
-      <Login />
-    </View>,
-
-    <View>
-      <SignIn />
-    </View>,
-
-    <View>
-      <ForgetPassword />
-    </View>,
-
-    <View>
-      <ChangePassword />
-    </View>,
-
-    <View>
-      <ProfileUpdate />
-    </View>,
-
-    <View>
-      <Profile />
-    </View>,
-
-    <View>
-      <PostView />
-    </View>,
-
-    <View>
-      <UpdatePost />
-    </View>,
-
-    <View>
-      <AddVideos />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <AddPost />
-    </View>,
-
-
     // <View>
-    // <CourseStep />
+    //   <Home />
     // </View>,
 
     // <View>
-    // <Acourses />
+    //   <Login />
     // </View>,
 
     // <View>
-    //  <Dcourses />
-    // </View>
+    //   <SignIn />
+    // </View>,
 
     // <View>
-    // <Icourses />
+    //   <ForgetPassword />
     // </View>,
 
-    //   <View>
-    //    <Feedback />
-    //   </View>,
-
-    //   <View>
-    //   <FView />
-    //   </View>, 
-
-
-    //  <View>
-    //  <AddVideos />
-    //  </View>,
-
-    //  <View>
-    //  <ManageVideos />
+    // <View>
+    //   <ChangePassword />
     // </View>,
 
-    <View>
-      <AddPost />
-    </View>,
+    // <View>
+    //   <ProfileUpdate />
+    // </View>,
 
-    <View>
-      <PostView />
-    </View>,
+    // <View>
+    //   <Profile />
+    // </View>,
 
-    <View>
-      <PostViewById />
-    </View>,
+    // <View>
+    //   <PostView />
+    // </View>,
+
+    // <View>
+    //   <UpdatePost />
+    // </View>,
+
+    // <View>
+    //   <AddVideos />
+    // </View>,
+
+    // <View>
+    //   <PostDelete />
+    // </View>,
+
+    // <View>
+    //   <PostDelete />
+    // </View>,
+
+    // <View>
+    //   <AddPost />
+    // </View>,
+
+
+    // // <View>
+    // // <CourseStep />
+    // // </View>,
+
+    // // <View>
+    // // <Acourses />
+    // // </View>,
+
+    // // <View>
+    // //  <Dcourses />
+    // // </View>
+
+    // // <View>
+    // // <Icourses />
+    // // </View>,
+
+    // //   <View>
+    // //    <Feedback />
+    // //   </View>,
+
+    // //   <View>
+    // //   <FView />
+    // //   </View>, 
+
+
+    // //  <View>
+    // //  <AddVideos />
+    // //  </View>,
+
+    // //  <View>
+    // //  <ManageVideos />
+    // // </View>,
+
+    // <View>
+    //   <AddPost />
+    // </View>,
+
+    // <View>
+    //   <PostView />
+    // </View>,
+
+    // <View>
+    //   <PostViewById />
+    // </View>,
 
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ManageVideos">
+      <Stack.Navigator initialRouteName="AllVideos">
         <Stack.Screen
           name="ManageVideos"
           component={ManageVideos}
@@ -145,6 +147,10 @@ export default function App() {
         <Stack.Screen
           name="AllVideos"
           component={AllVideos}
+        />
+        <Stack.Screen
+          name="AddComments"
+          component={AddComments}
         />
       </Stack.Navigator>
     </NavigationContainer>

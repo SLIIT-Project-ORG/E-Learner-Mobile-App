@@ -17,7 +17,7 @@ import {
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 
-const AllVideos = () => {
+const AllVideos = ({navigation}) => {
   const [videodetails, setvideodetails] = useState([]);
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
@@ -122,6 +122,24 @@ const AllVideos = () => {
                     }}
                     title="VIEW"
                   ></OpenURLButton>
+                  <Button
+                    buttonStyle={{
+                      backgroundColor: "#1fbf3f",
+
+                      borderRadius: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginBottom: 2,
+
+                    }}
+                    title="Add Feedback Comment"
+                    onPress={() =>
+                      navigation.navigate('AddComments', {
+                        paramKey:val._id,
+                        paramName:val.title
+                      })
+                    }
+                  />
                 </Card>
               </View>
             );
