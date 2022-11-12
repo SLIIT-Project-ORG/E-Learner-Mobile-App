@@ -1,17 +1,17 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from "react-native";
-import login from '../../../assets/login.png';
-import AppBarComponent from "../Common/AppBarComponent";
+import home from '../../../assets/home.gif';
 
-const Login = () => {
+
+const Login = ({navigation}) => {
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-                <AppBarComponent/>
+               
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Image source={login} style={styles.BorderClass} />
+                <Image source={home} style={styles.BorderClass} />
                 </View>
 
                 <View style={styles.container}>
@@ -30,19 +30,25 @@ const Login = () => {
                 </View>
             <View>
             <TouchableOpacity>
-                <Text style={styles.labeltext}>Forget Password ?</Text>
+                <Text style={styles.labeltext}onPress={() =>
+                      navigation.navigate('FORGET PASSWORD PAGE')
+          } >Forget Password ?</Text>
             </TouchableOpacity>
            </View>
 
            <View>
             <TouchableOpacity style={styles.defaultButton} >
-                <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}> LOGIN</Text>
+                <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}} onPress={() =>
+                      navigation.navigate('HOME PAGE')
+          }> LOGIN</Text>
             </TouchableOpacity>
             </View>
 
             <View>
             <TouchableOpacity style={styles.defaultButton1} >
-                <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}> SIGNIN</Text>
+                <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}  onPress={() =>
+                      navigation.navigate('REGISTER PAGE')
+          }> SIGNIN</Text>
             </TouchableOpacity>
             </View>
                 

@@ -1,16 +1,16 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import logo from '../../../assets/logo.png';
-import AppBarComponent from "../Common/AppBarComponent";
 
-const ForgetPassword = () => {
+
+const ForgetPassword = ({navigation}) => {
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
             
             <ScrollView>
-                <AppBarComponent/>
+               
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={logo} style={styles.BorderClass} />
                 </View>
@@ -28,7 +28,9 @@ const ForgetPassword = () => {
 
                 <View>
                     <TouchableOpacity style={styles.defaultButton} >
-                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> Submit</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}onPress={() =>
+                      navigation.navigate('CHANGE PASSWORD PAGE')
+           }> Submit</Text>
                     </TouchableOpacity>
                 </View>
 
