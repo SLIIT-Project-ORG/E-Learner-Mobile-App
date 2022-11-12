@@ -16,7 +16,6 @@ router.route("/").post(async (req, res) => {
         storage: Storage
     }).single('image')
 
-
     let imageData = null;
 
     await upload(req, res, (err) => {
