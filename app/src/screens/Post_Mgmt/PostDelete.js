@@ -25,7 +25,7 @@ function deletePost(id) {
       .delete(`http://localhost:8000/posts/${id}`)
       .then(() => {
         alert("Post Deleted Successfully");
-       
+       window.location.reload();
     
       })
       .catch((err) => {
