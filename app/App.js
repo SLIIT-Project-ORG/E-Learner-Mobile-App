@@ -117,7 +117,8 @@ export default function App() {
 
     <View>
       <AddPost />
-    </View>,
+    </View>
+    ,
 
     <View>
       <PostView />
@@ -125,25 +126,9 @@ export default function App() {
 
     <View>
       <PostViewById />
-    </View>,
+    </View>
 
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="ManageVideos">
-        <Stack.Screen
-          name="ManageVideos"
-          component={ManageVideos}
-        />
-        <Stack.Screen
-          name="AddVideos"
-          component={AddVideos}
-        />
-        <Stack.Screen
-          name="UpdateVideoDetails"
-          component={UpdateVideoDetails}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
 
     // <NavigationContainer>
 
