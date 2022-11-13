@@ -35,6 +35,7 @@ import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
 import CourseMenu from './src/screens/Course_Mgmt/CourseMenu';
 import AppBarComponent from './src/screens/Common/AppBarComponent';
 import GetStarted from './src/screens/User_Mgmt/GetStartedPage';
+import ViewArticle from './src/screens/User_Mgmt/ViewArticle';
 
 const Stack = createStackNavigator();
 
@@ -144,6 +145,18 @@ export default function App() {
         <Stack.Screen
           name="UPDATE POST"
           component={UpdatePost}
+        />
+        <Stack.Screen
+          name="ArticleView"
+          component={ArticleView}
+        />
+         <Stack.Screen
+          name="AddArticles"
+          component={AddArticles}
+        />
+        <Stack.Screen
+          name="UpdateArticles"
+          component={UpdateArticles}
         />
 
       </Stack.Navigator>

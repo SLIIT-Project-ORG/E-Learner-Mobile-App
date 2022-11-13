@@ -3,7 +3,7 @@ let Articles =require("./../../models/File_Upload_Mgmt/ArticleModel");
 
 router.route("/submit").post((req,res)=>{
    
-    const topic= req.body.topic;
+    const title= req.body.title;
     const description= req.body.description;
     const thumbnaillink= req.body.thumbnaillink;
     const authors= req.body.authors;
@@ -12,7 +12,7 @@ router.route("/submit").post((req,res)=>{
    
     const newArticles = new Articles({
         
-        topic,
+        title,
         description,
         thumbnaillink,
         authors
