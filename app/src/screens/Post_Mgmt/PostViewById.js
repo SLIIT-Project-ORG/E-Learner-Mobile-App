@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView, View, StyleSheet, Text ,TouchableOpacity } from 'react-native';
+import { SafeAreaView, ScrollView, View, StyleSheet, Text ,TouchableOpacity,Image } from 'react-native';
 import axios from 'axios';
+import home1 from '../../../assets/home.gif'
 
 
 const PostViewById = ({navigation,route}) => {
@@ -15,6 +16,7 @@ const PostViewById = ({navigation,route}) => {
       .then((res) => {
         settopic(res.data);
         console.log(res.data);
+        
       })
       .catch((err) => {
         console.error(err.message);
@@ -31,6 +33,10 @@ const PostViewById = ({navigation,route}) => {
 
 
         </View>
+        <View>
+                        <Image source={home1} style={Styles.BorderClass1} />
+                    </View>
+
         
          
 
@@ -114,10 +120,22 @@ const Styles = StyleSheet.create({
     marginLeft:5,
     marginRight:10,
     backgroundColor:'#ccffe6',
-    marginTop:120,
+    marginTop:10,
     borderColor:'green',
     borderWidth:2
 
+  },
+  BorderClass1:
+  {
+
+    width: 300,
+    height: 240,
+    
+    
+    borderRadius: 10,
+    marginTop: 20,
+    marginLeft: 10,
+    marginRight: 10
   }
 
 })

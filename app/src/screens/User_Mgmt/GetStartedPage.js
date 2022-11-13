@@ -40,8 +40,7 @@ const styles = StyleSheet.create({
 
         width: 360,
         height: 300,
-        borderWidth: 1,
-        borderColor: 'white',
+       
     },
     button:{
       

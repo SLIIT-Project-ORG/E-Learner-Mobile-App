@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
-import table from '../../../assets/table.png';
+
 
 import axios from 'axios';
 
@@ -8,9 +8,10 @@ const UpdatePost = ({route})=> {
 
    
     const id = route.params.paramKey;
-    const [data, setData] = useState([]);
+    const [data,setData] =useState([])
+    
+   
 
-  
     useEffect(() => {
     axios
       .get(`http://localhost:8000/posts/${id}`)
@@ -55,23 +56,13 @@ const UpdatePost = ({route})=> {
     <ScrollView>
             
             <View  style={styles.container}>
-            <Text style ={styles.title}>UPDATE POST</Text>
-           
-               <View  style={styles.container}>
-               <Image source={table} style={styles.BorderClass} />
-               </View>
-
-            <View>
-        <TouchableOpacity style={styles.defaultButton2} >
-            <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}> UPLOAD</Text>
-        </TouchableOpacity>
-        </View>
+            <marquee style ={styles.title}>UPDATE POST</marquee>
             </View>
 
 
             <View>
             <Text style={styles.label}>Topic</Text>
-            <TextInput style={styles.inputfields}  onChangeText={handleChange}  name="topic"  id='topic' value={data.topic}/>
+            <TextInput style={styles.inputfields}  onChangeText={handleChange}  value={data.topic}/>
             </View>
 
 
@@ -114,7 +105,7 @@ const styles = StyleSheet.create({
 
 title:{
  
-    fontSize:30,
+    fontSize:20,
     textAlign:'center',
     color:'black',
     fontWeight:'bold',
@@ -128,7 +119,7 @@ container:{
 },
 label: {
     fontSize: 20,
-    marginTop:10,
+    marginTop:30,
     marginLeft:-160,
     fontWeight: "bold",
     textAlign: "center",
