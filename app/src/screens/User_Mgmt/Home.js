@@ -1,11 +1,10 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, Image } from "react-native";
 import home from '../../../assets/home.png';
-import articles from '../../../assets/articles.png';
+import article from '../../../assets/article.png'
 import video from '../../../assets/video.png';
 import courses from '../../../assets/courses.png';
 import share from '../../../assets/share.png'
-import AppBarComponent from "../Common/AppBarComponent";
 
 const Home = ({ navigation }) => {
 
@@ -22,12 +21,11 @@ const Home = ({ navigation }) => {
 
                 <View >
                     <TouchableOpacity>
-                        <Image source={articles} style={styles.BorderButton1} />
+                        <Image source={article} style={styles.BorderButton1} />
 
                     </TouchableOpacity>
 
-//
-                //                
+
                 </View>
                 <View >
                     <TouchableOpacity
@@ -42,13 +40,18 @@ const Home = ({ navigation }) => {
                 </View>
 
                 <View >
-                    <TouchableOpacity>
-                        <Image source={video} style={styles.BorderButton2} />
+                    <TouchableOpacity onPress={() =>
+                        navigation.navigate('AllVideos')
+                    } >
+                        <Image source={video} style={styles.BorderButton2}
+                        />
 
                     </TouchableOpacity>
                 </View>
                 <View >
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() =>
+                        navigation.navigate('ADD POST PAGE')
+                    }>
 
                         <Image source={share} style={styles.BorderButton4} />
                     </TouchableOpacity>
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "bold",
         textAlign: "center",
-        color: 'green',
+        color: 'black',
         marginTop: 160
 
     },
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
         width: 360,
         height: 300,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: 'darkgreen',
     },
 
     BorderButton1:
@@ -99,7 +102,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginLeft: 10,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: '#00b3b3',
         borderRadius: 12,
         justifyContent: 'center'
     },
@@ -110,10 +113,10 @@ const styles = StyleSheet.create({
 
         width: 170,
         height: 150,
-        marginTop: -170,
+        marginTop: -150,
         marginLeft: 185,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: '#00b3b3',
         borderRadius: 12,
 
     },
@@ -126,7 +129,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 10,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: '#00b3b3',
         borderRadius: 12,
         justifyContent: 'center'
     },
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
         marginTop: -150,
         marginLeft: 185,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: '#00b3b3',
         borderRadius: 12,
 
     },
