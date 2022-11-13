@@ -27,7 +27,7 @@ import Screen from 'react-native-screens';
 
 import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
 import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
-
+import CommentManage from './src/screens/Video_Upload_Mgmt/CommentView';
 import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
 import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
 import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
@@ -153,7 +153,7 @@ export default function App() {
 
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AllVideos">
+      <Stack.Navigator initialRouteName="E-learner">
         <Stack.Screen
           name="ManageVideos"
           component={ManageVideos}
@@ -174,11 +174,15 @@ export default function App() {
           name="AddComments"
           component={AddComments}
         />
-      </Stack.Navigator>
+         <Stack.Screen
+          name="Comments"
+          component={CommentManage}
+        />
+      {/* </Stack.Navigator>
     </NavigationContainer>,
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Allposts">
+      <Stack.Navigator initialRouteName="Allposts"> */}
       <Stack.Screen 
           name="E-learner"
           component={GetStarted}

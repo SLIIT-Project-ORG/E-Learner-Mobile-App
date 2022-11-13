@@ -36,9 +36,12 @@ const Home = ({navigation}) => {
                 </View>
 
                 <View >
-                    <TouchableOpacity>
-                        <Image source={video} style={styles.BorderButton2} />
-
+                    <TouchableOpacity onPress={() =>
+                      navigation.navigate('AllVideos')
+          } >
+                        <Image source={video} style={styles.BorderButton2}
+                         />
+                            
                     </TouchableOpacity>
                 </View>
                 <View >
