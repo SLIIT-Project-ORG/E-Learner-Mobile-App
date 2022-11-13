@@ -6,14 +6,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CourseStep from './CourseStep';
 
-const AvailableCourses = () => {
+const AvailableCourses = ({ navigation }) => {
 
   const [courses, setCourses] = useState([]);
 
-  const id = "63598508a7bcb122ca347b9e";
-
   useEffect(() => {
-    axios.get(`http://localhost:8000/course/${id}`)
+    axios.get(`http://localhost:8000/course`)
       .then((res) => {
         setCourses(res.data);
         console.log(res.data);
@@ -27,13 +25,9 @@ const AvailableCourses = () => {
     <SafeAreaView>
       <ScrollView>
 
-        <AppBarComponent />
-
         <View style={styles.container}>
           <Text style={styles.title}>AVAILABLE COURSES</Text>
         </View>
-
-
 
         {
 
@@ -47,7 +41,13 @@ const AvailableCourses = () => {
                 <View><Text style={styles.label}>{value.name}</Text></View>
 
                 <View>
-                  <TouchableOpacity style={styles.defaultButton1} >
+                  <TouchableOpacity style={styles.defaultButton1}
+                    onPress={() =>
+                      navigation.navigate('CourseStep', {
+                        objectId: value._id
+                      })
+                    }
+                  >
                     <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> ENROLL NOW</Text>
                   </TouchableOpacity>
                 </View>

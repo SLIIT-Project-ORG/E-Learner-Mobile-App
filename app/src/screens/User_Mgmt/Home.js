@@ -6,14 +6,12 @@ import video from '../../../assets/video.png';
 import courses from '../../../assets/courses.png';
 import share from '../../../assets/share.png'
 
-
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-              
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={home} style={styles.BorderClass} />
 
@@ -26,28 +24,33 @@ const Home = ({navigation}) => {
 
                     </TouchableOpacity>
 
-             
+
                 </View>
                 <View >
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() =>
+                            navigation.navigate('CourseMenu')
+                        }
+                    >
 
-                        <Image source={courses} style={styles.BorderButton3} />
+                        <Image source={courses} style={styles.BorderButton3}
+                        />
                     </TouchableOpacity>
                 </View>
 
                 <View >
                     <TouchableOpacity onPress={() =>
-                      navigation.navigate('AllVideos')
-          } >
+                        navigation.navigate('AllVideos')
+                    } >
                         <Image source={video} style={styles.BorderButton2}
-                         />
-                            
+                        />
+
                     </TouchableOpacity>
                 </View>
                 <View >
                     <TouchableOpacity onPress={() =>
-                      navigation.navigate('ADD POST PAGE')
-          }>
+                        navigation.navigate('ADD POST PAGE')
+                    }>
 
                         <Image source={share} style={styles.BorderButton4} />
                     </TouchableOpacity>

@@ -1,19 +1,25 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView, ScrollView, View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import AppBarComponent from '../Common/AppBarComponent';
 import java from '../../../assets/CM_java.png'
+import axios from 'axios';
 
-const CourseIntro = () => {
+const CourseIntro = ({ route }) => {
 
-  const id = "63598508a7bcb122ca347b9e";
+  const id = route.params.objectId;
+  const stepId = route.params.stepId;
 
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState("");
+  const [course, setCourse] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:8000/course/${id}`)
       .then((res) => {
-        setContent(res.data.course);
+        setContent(res.data);
+        setCourse(res.data.course);
         console.log(res.data.course);
+        console.log(id);
+        console.log("Step ID : " + stepId)
       })
       .catch((err) => {
         console.log(err);
@@ -24,19 +30,19 @@ const CourseIntro = () => {
     <SafeAreaView>
       <ScrollView>
 
-        <AppBarComponent />
-
         <View style={styles.box1}>
-          <Text style={styles.title}>INTRODUCTION</Text>
-          <Text style={styles.title1}>Catogory Programming </Text>
-          <Text style={styles.title2}>Created By Admin </Text>
+          {/* <Text style={styles.title}>{course[stepId].title}</Text> */}
+          <Text style={styles.title1}>Catogory = {content.category} </Text>
+          <Text style={styles.title2}>Created By {content.created_by} </Text>
         </View>
 
         <View style={styles.box} >
           <View><Image source={java} style={styles.BorderClass1} ></Image></View>
 
-          <View><Text style={styles.label}>INTRODUCTION</Text></View>
-
+          <View><Text style={styles.label}></Text></View>
+          <Text>
+          Java is a programming language and computing platform first released by Sun Microsystems in 1995. It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built. New, innovative products and digital services designed for the future continue to rely on Java, as well.
+          </Text>
 
         </View>
 

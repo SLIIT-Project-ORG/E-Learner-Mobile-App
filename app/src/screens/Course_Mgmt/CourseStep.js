@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { AppBar, Text } from '@react-native-material/core';
-import { SafeAreaView, ScrollView, StyleSheet, View, Image } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import steps from '../../../assets/steps.png';
 import AppBarComponent from '../Common/AppBarComponent';
 import axios from 'axios';
 
-const CourseStep = () => {
+const CourseStep = ({ route,navigation }) => {
 
-  const id = "63598508a7bcb122ca347b9e";
+  const id = route.params.objectId;
 
   const [content, setContent] = useState([]);
   const [course, setCourse] = useState([]);
@@ -16,9 +16,9 @@ const CourseStep = () => {
     axios.get(`http://localhost:8000/course/${id}`)
       .then((res) => {
         setContent(res.data.course);
-        setCourse(res.data);
-        console.log(res.data.course);
-        console.log(res.data);
+        // console.log(res.data.course);
+        // console.log(res.data);
+        // console.log(id);
       })
       .catch((err) => {
         console.log(err);
@@ -28,9 +28,8 @@ const CourseStep = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <AppBarComponent />
         <View>
-            <Image source={steps} style={styles.BorderClass}></Image>
+          <Image source={steps} style={styles.BorderClass}></Image>
         </View>
         {
 
@@ -40,9 +39,18 @@ const CourseStep = () => {
               <View style={styles.box2}>
                 <View style={styles.box1}>
                   <Text style={styles[value.content_no]}>{value.content_no}</Text>
-                  <View style={styles.box3}>
-                    <Text style={styles.titleLabel}>{value.title}</Text>
-                  </View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('CourseIntro', {
+                        objectId:id,
+                        stepId:value.content_no
+                      })
+                    }
+                  >
+                    <View style={styles.box3}>
+                      <Text style={styles.titleLabel}>{value.title}</Text>
+                    </View>
+                  </TouchableOpacity>
 
                 </View>
               </View>

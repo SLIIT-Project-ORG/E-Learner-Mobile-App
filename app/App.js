@@ -32,124 +32,14 @@ import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
 import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
 import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
 import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
+import CourseMenu from './src/screens/Course_Mgmt/CourseMenu';
 import AppBarComponent from './src/screens/Common/AppBarComponent';
 import GetStarted from './src/screens/User_Mgmt/GetStartedPage';
-
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    // <View>
-    //   <Home />
-    // </View>,
-
-    // <View>
-    //   <Login />
-    // </View>,
-
-    // <View>
-    //   <SignIn />
-    // </View>,
-
-    // <View>
-    //   <ForgetPassword />
-    // </View>,
-
-    // <View>
-    //   <ChangePassword />
-    // </View>,
-
-    // <View>
-    //   <ProfileUpdate />
-    // </View>,
-
-
-    // <View>
-    //   <Profile />
-    // </View>,
-
-    // <View>
-    //   <PostView />
-    // </View>,
-
-
-
-
-
-
-    // <View>
-    //   <UpdatePost />
-    // </View>,
-
-
-    // <View>
-    //   <AddVideos />
-    // </View>,
-
-    // <View>
-    //   <PostDelete />
-    // </View>,
-
-    // <View>
-    //   <PostDelete />
-    // </View>,
-
-    // <View>
-    //   <AddPost />
-    // </View>,
-
-
-    // // <View>
-    // // <CourseStep />
-    // // </View>,
-
-    // // <View>
-    // // <Acourses />
-    // // </View>,
-
-    // // <View>
-    // //  <Dcourses />
-    // // </View>
-
-
-    //  <View>
-    //  <AddVideos />
-    //  </View>,
-
-
-    // // <View>
-    // // <Icourses />
-    // // </View>,
-
-    // //   <View>
-    // //    <Feedback />
-    // //   </View>,
-
-    // //   <View>
-    // //   <FView />
-    // //   </View>, 
-
-
-    // //  <View>
-    // //  <AddVideos />
-    // //  </View>,
-
-    // //  <View>
-    // //  <ManageVideos />
-    // // </View>,
-
-    // <View>
-    //   <AddPost />
-    // </View>,
-
-    // <View>
-    //   <PostView />
-    // </View>,
-
-    // <View>
-    //   <PostViewById />
-    // </View>,
 
 
     <NavigationContainer>
@@ -174,43 +64,68 @@ export default function App() {
           name="AddComments"
           component={AddComments}
         />
-         <Stack.Screen
+
+        <Stack.Screen
+          name="AvailableCourses"
+          component={AvailableCourses}
+        />
+        <Stack.Screen
+          name="CourseIntro"
+          component={CourseIntro}
+        />
+        <Stack.Screen
+          name="CourseMenu"
+          component={CourseMenu}
+        />
+        <Stack.Screen
+          name="CourseStep"
+          component={CourseStep}
+        />
+        <Stack.Screen
+          name="DeleteCourses"
+          component={DeleteCourses}
+        />
+        <Stack.Screen
+          name="Feedback"
+          component={Feedback}
+        />
+        <Stack.Screen
+          name="FeedbackView"
+          component={FeedbackView}
+        />
+        <Stack.Screen
           name="Comments"
           component={CommentManage}
         />
-      {/* </Stack.Navigator>
-    </NavigationContainer>,
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Allposts"> */}
-      <Stack.Screen 
+        <Stack.Screen
           name="E-learner"
           component={GetStarted}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="LOGIN PAGE"
           component={Login}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="FORGET PASSWORD PAGE"
           component={ForgetPassword}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="CHANGE PASSWORD PAGE"
           component={ChangePassword}
         />
-        <Stack.Screen 
+        <Stack.Screen
           name="REGISTER PAGE"
           component={SignIn}
         />
-         
 
-      <Stack.Screen 
+
+        <Stack.Screen
           name="HOME PAGE"
           component={Home}
         />
 
-        <Stack.Screen 
+        <Stack.Screen
           name="ADD POST PAGE"
           component={AddPost}
         />
@@ -230,67 +145,9 @@ export default function App() {
           name="UPDATE POST"
           component={UpdatePost}
         />
-        
+
       </Stack.Navigator>
     </NavigationContainer>
-
-
-    // <NavigationContainer>
-
-    //   <Stack.Navigator initialRouteName='AvailableCourses'>
-    //     <Stack.Screen name='AvailableCourses' component={AvailableCourses} />
-    //     <Stack.Screen name='CourseStep' component={CourseStep} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-
-
-
-    // <View>
-    //   <AddArticles/>
-    // </View>,
-    // <View>
-    //   <ArticleView/>
-    // </View>,
-    // <View>
-    //   <UpdateArticles/>
-    // </View>,
-    // <View>
-    //   <DeleteArticle/>
-    // </View>,
-    //  <View>
-    // <CourseStep/>
-    // </View>,
-
-    // <View>
-    // <AvailableCourses/>
-    // </View>,
-
-    // <View>
-    //  <DeleteCourses />
-    // </View>,
-
-    // <View>
-    // <CourseIntro />
-    // </View>,
-
-    //   <View>
-    //    <Feedback />
-    //   </View>,
-
-    //   <View>
-    //   <FView />
-    //   </View>w
-
-
-    //   <View>
-    //   <AddPost />
-    // </View>,
-    // <View>
-    //   <PostView/>
-    //   </View>
-
-
-
 
   );
 }

@@ -1,38 +1,42 @@
 import React from 'react'
-import { AppBar, Text } from '@react-native-material/core';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
+import { AppBar } from '@react-native-material/core';
+import { Image, SafeAreaView, ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import AppBarComponent from '../Common/AppBarComponent';
-import Acourses from '../../../assets/courses.png';
+import courses from '../../../assets/courses.png';
 import course1 from '../../../assets/course1.png';
 import course2 from '../../../assets/courses2.png';
 
 
-const CourseMenu = () => {
+const CourseMenu = ({ navigation }) => {
     return (
         <SafeAreaView >
             <ScrollView >
 
                 <View style={styles.view}>
-                    <AppBarComponent />
+                    {/* <AppBarComponent /> */}
                     <View style={styles.container}>
                         <Text style={styles.myTitle}>COURSES</Text>
                     </View>
 
                     <View>
-                        <Image source={Acourses}></Image>
+                        <Image source={courses} style={styles.img}></Image>
                     </View>
                     <TouchableOpacity>
                         <View>
                             <Image source={course1} style={styles.BorderClass1}></Image>
-                            <Text style={styles.label}>My Courses</Text>
+                            {/* <Text style={styles.label}>My Courses</Text> */}
                         </View>
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() =>
+                            navigation.navigate('AvailableCourses')
+                        }
+                    >
                         <View>
-                            <Image source={course2} style={styles.BorderClass2}></Image>
-                            <Text style={styles.label1}>View Courses</Text>
+                            <Image source={course2} style={styles.BorderClass2} ></Image>
+                            {/* <Text style={styles.label1}>View Courses</Text> */}
                         </View>
                     </TouchableOpacity>
 
@@ -52,7 +56,80 @@ const CourseMenu = () => {
 const styles = StyleSheet.create({
     view: {
         marginTop: 25
-    }
+    },
+    img: {
+        width: '90%',
+        marginLeft: 20,
+        marginTop: 20,
+        height: 200,
+        borderWidth: 1,
+        borderWidth: 4,
+        borderColor: 'black',
+    },
+    myTitle: {
+        fontSize: 30,
+        textAlign: 'center',
+        color: 'black',
+        fontWeight: 'bold',
+        backgroundColor: '#1fbf3f',
+        marginTop: 0,
+        marginLeft: 20,
+        marginRight: 20,
+        borderColor: 'black',
+        borderWidth: 1
+    },
+    container: {
+        backgroundColor: 'white'
+    },
+    defaultButton1: {
+        backgroundColor: '#1fbf3f',
+        marginTop: 90,
+        marginLeft: 50,
+        marginRight: 30,
+        padding: 5,
+        borderRadius: 15,
+        fontWeight: 'bold',
+        fontSize: 16,
+        textAlign: 'center'
+    },
+    label: {
+        fontSize: 16,
+        marginTop: 80,
+        marginLeft: -100,
+        fontWeight: "bold",
+        textAlign: "center",
+        color: 'black'
+
+    },
+    label1: {
+        fontSize: 16,
+        marginTop: 60,
+        fontWeight: "bold",
+        textAlign: "center",
+        color: 'black',
+        marginLeft: 20,
+    },
+    BorderClass1:
+    {
+        width: 150,
+        height: 150,
+        borderWidth: 2,
+        borderColor: 'darkgray',
+        borderRadius: 10,
+        marginTop: 30,
+        marginLeft: 15,
+        marginRight: 10
+    },
+    BorderClass2: {
+        width: 150,
+        height: 150,
+        borderWidth: 2,
+        borderColor: 'darkgray',
+        borderRadius: 10,
+        marginTop: -150,
+        marginLeft: 190,
+        marginRight: 10
+    },
 })
 
 export default CourseMenu

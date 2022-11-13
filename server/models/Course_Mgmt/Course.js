@@ -5,7 +5,7 @@ const CourseSchema = new Schema({
 
     name:{
         type:String,
-        required:true
+        required:false
     },
     category:{
         type:String,
@@ -17,8 +17,7 @@ const CourseSchema = new Schema({
     },
     image:{
         data:Buffer,
-        contentType:String,
-        required:false
+        contentType:String
     },
     course:{
         type:["content_no","title","description"],
