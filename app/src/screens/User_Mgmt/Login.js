@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from "react-native";
-import home from '../../../assets/home.gif';
+import log from '../../../assets/log.gif';
 
 
 const Login = ({navigation}) => {
@@ -11,7 +11,7 @@ const Login = ({navigation}) => {
             <ScrollView>
                
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Image source={home} style={styles.BorderClass} />
+                <Image source={log} style={styles.BorderClass} />
                 </View>
 
                 <View style={styles.container}>

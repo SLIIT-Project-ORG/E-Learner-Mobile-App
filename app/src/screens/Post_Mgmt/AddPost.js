@@ -1,6 +1,6 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView, ScrollView, View, StyleSheet, Text, TextInput, Image, TouchableOpacity, } from 'react-native'
-import table from '../../../assets/table.png';
+import table from '../../../assets/newpost.gif';
 
 
 
@@ -8,14 +8,15 @@ import axios from 'axios';
 
 
 
-const AddPost = ({navigation}) => {
+const AddPost = ({ navigation }) => {
 
-    
+
 
     const [topic, settopic] = useState("");
     const [category, setcategory] = useState("");
     const [relevantLink, setrelevantLink] = useState("");
     const [description, setdescription] = useState("");
+   
 
     function sendData(e) {
         e.preventDefault();
@@ -23,36 +24,30 @@ const AddPost = ({navigation}) => {
             topic, category, relevantLink, description
         };
 
+        console.log(newpost);
+
         axios
             .post("http://localhost:8000/posts/", newpost)
             .then(() => {
                 alert("Post Successfully Added");
-              
-                
-             
             })
             .catch((err) => {
                 alert(err);
             });
     }
 
-    
+
 
     return (
         <SafeAreaView>
             <ScrollView>
-               <View style={styles.container}>
+                <View style={styles.container}>
                     <marquee style={styles.title}>ADD POST</marquee>
                     <View style={styles.container}>
                         <Image source={table} style={styles.BorderClass} />
                     </View>
 
-                    <View>
-                        <TouchableOpacity style={styles.defaultButton2} >
-                            
-                            <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}> UPLOAD</Text>
-                        </TouchableOpacity>
-                    </View>
+                    
                 </View>
 
 
@@ -66,7 +61,7 @@ const AddPost = ({navigation}) => {
 
                 <View>
                     <Text style={styles.label}>Category</Text>
-                    <TextInput style={styles.inputfields}   name="category" id="category" onChange={(e) => {
+                    <TextInput style={styles.inputfields} name="category" id="category" onChange={(e) => {
                         setcategory(e.target.value);
                     }} />
                 </View>
@@ -74,14 +69,14 @@ const AddPost = ({navigation}) => {
 
                 <View>
                     <Text style={styles.label}>Relevant Link</Text>
-                    <TextInput style={styles.inputfields} name="relevantLink"  id="relevantLink" onChange={(e) => {
+                    <TextInput style={styles.inputfields} name="relevantLink" id="relevantLink" onChange={(e) => {
                         setrelevantLink(e.target.value);
                     }} />
                 </View>
 
                 <View>
                     <Text style={styles.label}>Description</Text>
-                    <textarea style={styles.inputfields} name="description"   id="description"
+                    <textarea style={styles.inputfields} name="description" id="description"
                         onChange={(e) => {
                             setdescription(e.target.value);
                         }}
@@ -91,16 +86,16 @@ const AddPost = ({navigation}) => {
 
                 <View>
                     <TouchableOpacity style={styles.defaultButton} >
-                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}    onPress={sendData}
-                > SUBMIT</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }} onPress={sendData}
+                        > SUBMIT</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View>
                     <TouchableOpacity style={styles.defaultButton1} >
-                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}  onPress={() =>
-                      navigation.navigate('VIEW POST PAGE')
-          } >VIEW</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }} onPress={() =>
+                            navigation.navigate('VIEW POST PAGE')
+                        } >VIEW</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -120,11 +115,11 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         backgroundColor: '#1fbf3f',
-        marginTop:0,
-        marginLeft:20,
-        marginRight:20,
-        borderColor:'black',
-        borderWidth:1
+        marginTop: 0,
+        marginLeft: 20,
+        marginRight: 20,
+        borderColor: 'black',
+        borderWidth: 1
 
     },
     container: {

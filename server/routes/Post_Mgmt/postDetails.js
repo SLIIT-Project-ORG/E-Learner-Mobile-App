@@ -1,53 +1,74 @@
 const router = require("express").Router();
 const postModel = require("../../models/Post_Mgmt/PostDetails");
-const ImageModel = require("../../models/Post_Mgmt/ImageModel");
-const multer = require("multer");
+//const ImageModel = require("../../models/Post_Mgmt/ImageModel");
+// const multer = require("multer");
 
 router.route("/").post(async (req, res) => {
 
-    const Storage = multer.diskStorage({
-        destination: "upload",
-        filename: (req, file, cb) => {
-            cb(null, file.originalname);
-        }
+
+    let topic = req.body.topic;
+    let category = req.body.category;
+    let relevantLink = req.body.relevantLink;
+    let description = req.body.description;
+  
+  
+
+    const postobj = new postModel({
+
+       topic,category,relevantLink,description
+    
     });
 
-    const upload = multer({
-        storage: Storage
-    }).single('image')
-
-    let imageData = null;
-
-    await upload(req, res, (err) => {
-        if (err) {
-            console.log(err);
-        } else {
-            newImage = new ImageModel({
-                image: {
-                    data: req.file.filename,
-                    contentType: 'image/png'
-                }
-            })
-            newImage.save()
-                .then((data) => {
-                    console.log(data._id);
-
-                    let reqBody = req.body;
-
-                    reqBody.image = data;
-                    postModel.create(reqBody)
-                        .then((data) => {
-                            res.json(data);
-                        })
-                        .catch((err) => {
-                            res.json(err.message);
-                        })
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-        }
+   
+    postobj.save().then(()=>{
+        res.json("Post Successfully Added")
+    }).catch((err)=>{
+        console.log(err);
     })
+
+//     const Storage = multer.diskStorage({
+//         destination: "upload",
+//         filename: (req, file, cb) => {
+//             cb(null, file.originalname);
+//         }
+//     });
+
+//     const upload = multer({
+//         storage: Storage
+//     }).single('image')
+
+//     let imageData = null;
+
+//     await upload(req, res, (err) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             newImage = new ImageModel({
+//                 image: {
+//                     data: req.body.image,
+//                     contentType: 'image/png'
+//                 }
+//             })
+//             newImage.save()
+//                 .then((data) => {
+//                     console.log(data._id);
+
+//                     let reqBody = req.body;
+
+//                     reqBody.image = data;
+//                     postModel.create(reqBody)
+//                         .then((data) => {
+//                             res.json(data);
+//                         })
+//                         .catch((err) => {
+//                             res.json(err.message);
+//                         })
+//                 })
+//                 .catch((err) => {
+//                     console.log(err);
+//                 })
+//         }
+//     })
 
 })
 
@@ -105,5 +126,30 @@ router.route("/:id").put((req, res) => {
             res.json(err.message);
         })
 })
+
+
+
+
+
+
+
+// router.route("/").post(async (req, res) => {
+
+//     let reqBody = req.body;
+//     console.log(reqBody);
+//     postModel.create(reqBody)
+//         .then((data) => {
+//             res.json(data);
+//         })
+//         .catch((err) => {
+//             res.json(err.message);
+//         })
+// })
+
+
+
+
+
+
 
 module.exports = router;

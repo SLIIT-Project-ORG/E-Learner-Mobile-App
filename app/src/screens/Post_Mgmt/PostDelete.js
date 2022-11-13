@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { ScrollView, View, StyleSheet, Text,Image,TouchableOpacity, SafeAreaView } from 'react-native'
 import AppBarComponent from '../Common/AppBarComponent'
-import table from '../../../assets/table.png'
+import table from '../../../assets/home1.gif'
 import axios from 'axios';
 
 const PostDelete = ({navigation}) => {
@@ -25,7 +25,7 @@ function deletePost(id) {
       .delete(`http://localhost:8000/posts/${id}`)
       .then(() => {
         alert("Post Deleted Successfully");
-        window.location.reload();
+       
     
       })
       .catch((err) => {
@@ -39,7 +39,7 @@ function deletePost(id) {
       <ScrollView>
        
         <View style={Styles.container}>
-          <Text style={Styles.title}>POST VIEW</Text>
+          <marquee style={Styles.title}>POST VIEW</marquee>
         </View>
 
 
@@ -52,8 +52,8 @@ function deletePost(id) {
                 <View><Image source={table} style={Styles.BorderClass1} ></Image>
                 </View>
 
-                <View style={Styles.label}>
-                  <Text>{value.topic}</Text>
+                <View >
+                  <Text style={Styles.label}>{value.topic}</Text>
                 </View>
 
                 <View>
@@ -86,7 +86,7 @@ const Styles = StyleSheet.create({
 
   title: {
 
-    fontSize: 30,
+    fontSize: 20,
     textAlign: 'center',
     color: 'black',
     fontWeight: 'bold',
@@ -101,7 +101,7 @@ const Styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   label: {
-    fontSize: 30,
+    fontSize: 20,
     marginTop: -100,
     marginLeft: 100,
     fontWeight: "bold",
@@ -111,7 +111,7 @@ const Styles = StyleSheet.create({
   },
   box: {
 
-    backgroundColor: 'lightgray',
+    backgroundColor: '#ccffe6',
     height: 150,
     width: 340,
     borderColor: 'gray',
@@ -126,7 +126,7 @@ const Styles = StyleSheet.create({
   defaultButton1: {
 
     backgroundColor: '#ff6666',
-    marginTop: 20,
+    marginTop: -60,
     marginLeft: 130,
     marginRight: 30,
     padding: 10,
@@ -139,7 +139,7 @@ const Styles = StyleSheet.create({
   defaultButton2: {
 
     backgroundColor: '#00ff00',
-    marginTop: 10,
+    marginTop: -10,
     marginLeft: 130,
     marginRight: 30,
     padding: 10,

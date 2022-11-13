@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet, TouchableOpacity, Image, Button } from "react-native";
 import AppBarComponent from "../Common/AppBarComponent";
-import table from '../../../assets/table.png';
+import table from '../../../assets/newpost.gif';
 import axios from "axios";
 import PostViewById from "./PostViewById";
 
@@ -46,11 +46,6 @@ const PostView = ({ navigation }) => {
                   <Text style={Styles.label}>{value.topic}</Text>
                 </View>
 
-                <View>
-                  <TouchableOpacity style={Styles.defaultButton1} >
-                    <Text style={{ fontWeight: 'bold', fontSize: 16, color: 'black', textAlign: 'center' }}> DOWNLOAD NOW</Text>
-                  </TouchableOpacity>
-                </View>
 
 
                 <View>
@@ -104,7 +99,7 @@ const Styles = StyleSheet.create({
   },
   box: {
 
-    backgroundColor: '#c2c2d6',
+    backgroundColor: '#ccffe6',
     height: 150,
     width: 340,
     borderColor: 'black',
@@ -131,8 +126,8 @@ const Styles = StyleSheet.create({
 
   defaultButton2: {
 
-    backgroundColor: '#99e6ff',
-    marginTop: -10,
+    backgroundColor: '#20e3e3',
+    marginTop: -30,
     marginLeft: 130,
     marginRight: 30,
     padding: 10,
@@ -147,8 +142,8 @@ const Styles = StyleSheet.create({
 
     width: 100,
     height: 100,
-    borderWidth: 2,
-    borderColor: 'darkgray',
+   
+   
     borderRadius: 10,
     marginTop: 10,
     marginLeft: 10,
