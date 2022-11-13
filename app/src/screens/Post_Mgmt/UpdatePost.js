@@ -1,15 +1,59 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { SafeAreaView, ScrollView, View ,StyleSheet,Text,TextInput,Image,TouchableOpacity} from 'react-native'
 import table from '../../../assets/table.png';
-import AppBarComponent from '../Common/AppBarComponent';
+
+import axios from 'axios';
+
+const UpdatePost = ({route})=> {
+
+   
+    const id = route.params.paramKey;
+    const [data, setData] = useState([]);
+
+  
+    useEffect(() => {
+    axios
+      .get(`http://localhost:8000/posts/${id}`)
+
+      .then((res) => {
+        setData(res.data);
+       
+        console.log(res.data);
+        
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
+  
+
+  const updateData=(e)=> {
+    e.preventDefault();
+     axios
+        .put(`http://localhost:8000/posts/${id}`,data)
+      .then(() => {
+        console.log(data);
+        alert("Post Details updated Successfully");
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setData({ ...data, [name]: value });
+    
+  };
 
 
-const UpdatePost = ()=> {
   return (
 
     <SafeAreaView>
     <ScrollView>
-             <AppBarComponent/>
+            
             <View  style={styles.container}>
             <Text style ={styles.title}>UPDATE POST</Text>
            
@@ -27,30 +71,30 @@ const UpdatePost = ()=> {
 
             <View>
             <Text style={styles.label}>Topic</Text>
-            <TextInput style={styles.inputfields} />
+            <TextInput style={styles.inputfields}  onChangeText={handleChange}  name="topic"  id='topic' value={data.topic}/>
             </View>
 
 
             <View>
             <Text style={styles.label}>Category</Text>
-            <TextInput style={styles.inputfields} />
+            <TextInput style={styles.inputfields}  onChangeText={handleChange}  name="category" id="category" value={data.category}/>
             </View>
 
 
             <View>
             <Text style={styles.label}>Relevant Link</Text>
-            <TextInput style={styles.inputfields} />
+            <TextInput style={styles.inputfields}  onChangeText={handleChange} name="relevantLink"  id="relevantLink" value={data.relevantLink}/>
             </View>
 
             <View>
             <Text style={styles.label}>Description</Text>
-            <textarea style={styles.inputfields} />
+            <textarea style={styles.inputfields}  onChangeT={handleChange} name="description" id="description" value={data.description}/>
             </View>
 
 
         <View>
         <TouchableOpacity style={styles.defaultButton} >
-        <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}}>UPDATE </Text>
+        <Text style={{fontWeight:'bold' , fontSize:20, color:'black' ,textAlign:'center'}} onPress={updateData}>UPDATE </Text>
         </TouchableOpacity>
         </View>
 
@@ -70,7 +114,7 @@ const styles = StyleSheet.create({
 
 title:{
  
-    fontSize:40,
+    fontSize:30,
     textAlign:'center',
     color:'black',
     fontWeight:'bold',

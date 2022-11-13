@@ -1,56 +1,100 @@
-import React from "react";
+import React, {useState} from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
-import AppBarComponent from "../Common/AppBarComponent";
+import axios from "axios";
 
 
 const SignIn = () => {
+
+    const [firstname, setfirstname] = useState("");
+    const [lastname, setlastname] = useState("");
+    const [username, setusername] = useState("");
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
+    const [mobilenumber, setmobilenumber] = useState("");
+    const [address, setaddress] = useState("");
+
+    function sendData(e) {
+        e.preventDefault();
+        const newuser = {
+            firstname, lastname, username, email, password, mobilenumber, address
+        };
+
+        axios
+            .post("http://localhost:8000/signin/insert/", newuser)
+            .then(() => {
+                alert(" Successfully Registered");
+
+
+
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    }
+
+
+
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-             <AppBarComponent/>
+
                 <View>
                     <Text style={styles.label}>First Name</Text>
-                    <TextInput style={styles.inputfields} />
+                    <TextInput style={styles.inputfields} onChange={(e) => {
+                        setfirstname(e.target.value);
+                    }} />
                 </View>
 
 
                 <View>
                     <Text style={styles.label}>Last Name</Text>
-                    <TextInput style={styles.inputfields} />
+                    <TextInput style={styles.inputfields} onChange={(e) => {
+                        setlastname(e.target.value);
+                    }} />
                 </View>
 
                 <View>
                     <Text style={styles.label}>User Name</Text>
-                    <TextInput style={styles.inputfields} />
+                    <TextInput style={styles.inputfields} onChange={(e) => {
+                        setusername(e.target.value);
+                    }} />
                 </View>
 
                 <View>
                     <Text style={styles.label}>Email</Text>
-                    <TextInput style={styles.inputfields} placeholder="Enter your Email" />
+                    <TextInput style={styles.inputfields} placeholder="Enter your Email" onChange={(e) => {
+                        setemail(e.target.value);
+                    }} />
                 </View>
 
                 <View>
                     <Text style={styles.label}>Password</Text>
-                    <TextInput style={styles.inputfields} secureTextEntry='true' placeholder="Enter your Password" />
+                    <TextInput style={styles.inputfields} secureTextEntry='true' placeholder="Enter your Password" onChange={(e) => {
+                        setpassword(e.target.value);
+                    }} />
 
                 </View>
 
                 <View>
                     <Text style={styles.label}>Mobile Number</Text>
-                    <TextInput style={styles.inputfields} />
+                    <TextInput style={styles.inputfields} onChange={(e) => {
+                        setmobilenumber(e.target.value);
+                    }} />
                 </View>
 
                 <View>
                     <Text style={styles.label}>Address</Text>
-                    <TextInput style={styles.inputfields} />
+                    <TextInput style={styles.inputfields} onChange={(e) => {
+                        setaddress(e.target.value);
+                    }} />
                 </View>
 
 
                 <View>
                     <TouchableOpacity style={styles.defaultButton} >
-                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }}>REGISTER</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'black', textAlign: 'center' }} onPress={sendData}>REGISTER</Text>
                     </TouchableOpacity>
                 </View>
 

@@ -12,25 +12,25 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const AddArticles = () => {
-  const [topic, settopic] = useState("");
-  const [description, setdescription] = useState("");
-  const [thumbnaillink, setthumbnaillink] = useState("");
-  const [authors, setauthors] = useState("");
+const AddComments = ({route}) => {
+  const [title, settitle] = useState(route.params.paramKey);
+  const [videoid, setvideoid] = useState(route.params.paramName);
+  const [name, setname] = useState("");
+  const [comment, setcomment] = useState("");
 
   function sendData(e) {
     e.preventDefault();
-    const newArticle = {
-      topic,
-      description,
-      thumbnaillink,
-      authors,
+    const newfueldetail = {
+      title,
+      videoid,
+      name,
+      comment,
     };
-    
+    //console.log(newfueldetail);
     axios
-      .post("http://localhost:5000/articles/submit", newArticle)
+      .post("http://localhost:8000/comments/add", newfueldetail)
       .then(() => {
-        alert("Article Added Successfylly Detais added");
+        alert("video comment added");
       })
       .catch((err) => {
         alert(err);
@@ -44,48 +44,32 @@ const AddArticles = () => {
           <Text style={styles.myTitle}>E- Learner</Text>
         </View>
         <View style={styles.container}>
-          <Text style={styles.myTitle2}>Add Articles</Text>
+          <Text style={styles.myTitle2}>Add Your comment</Text>
         </View>
+        <View style={styles.container}>
+          <Text style={styles.myTitle}>{route.params.paramName}</Text>
+        </View>
+        
 
+       
         <View>
-          <Text style={styles.label}>Article Topic</Text>
+          <Text style={styles.label}>Student Name</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              settopic(e.target.value);
+              setname(e.target.value);
             }}
-            placeholder="Topic of the Article"
-          />
-        </View>
-
-        <View>
-          <Text style={styles.label}> Description</Text>
-          <TextInput
-            style={styles.inputfields}
-            onChange={(e) => {
-              setdescription(e.target.value);
-            }}
-            placeholder=" Write the description of the Article"
+            placeholder="Studenr Name"
           />
         </View>
         <View>
-          <Text style={styles.label}>Thumbnail Link</Text>
+          <Text style={styles.label}>comment</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              setthumbnaillink(e.target.value);
+              setcomment(e.target.value);
             }}
-            placeholder="Thubmnail Link"
-          />
-        </View>
-        <View>
-          <Text style={styles.label}>Authors</Text>
-          <TextInput
-            style={styles.inputfields}
-            onChange={(e) => {
-              setauthors(e.target.value);
-            }}
-            placeholder="Mention Authors"
+            placeholder="comment"
           />
         </View>
         <View>
@@ -105,18 +89,17 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
   },
-
   myTitle: {
     fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
-    color: "green",
+    color: "#2fa347",
   },
   myTitle2: {
     fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
-    color: "darkblue",
+    color: "#00e673",
   },
 
   BorderClass: {
@@ -171,4 +154,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddArticles;
+export default AddComments;

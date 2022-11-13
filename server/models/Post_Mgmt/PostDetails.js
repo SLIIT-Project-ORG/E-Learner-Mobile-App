@@ -19,8 +19,8 @@ const postSchema = new Schema({
         type:String,
     },
     image:{
-        type:Buffer,
-        required:false
+        type:Object,
+        required:true
     },
     createdAt:{
         type:Date,

@@ -17,12 +17,12 @@ import {
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 
-const AllVideos = ({navigation}) => {
+const CommentManage = ({route}) => {
   const [videodetails, setvideodetails] = useState([]);
-  const [searchData, setSearchData] = useState("");
+  const [searchData, setSearchData] = useState(route.params.paramTitle);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/videodetails/`)
+      .get(`http://localhost:8000/comments/`)
       .then((videodetails) => {
         setvideodetails(videodetails.data);
         console.log(videodetails.data);
@@ -34,7 +34,7 @@ const AllVideos = ({navigation}) => {
 
   function deletevideo(id) {
     axios
-      .delete(`http://localhost:8000/videodetails/delete/${id}`)
+      .delete(`http://localhost:8000/comments/delete/${id}`)
       .then(() => {
         alert("Deleted Successfully");
       })
@@ -79,24 +79,16 @@ const AllVideos = ({navigation}) => {
         <Text style={styles.myTitle}>E- Learner</Text>
       </View>
       <View style={styles.container}>
-        <Text style={styles.myTitle2}>Videos</Text>
+        <Text style={styles.myTitle2}> Comments</Text>
       </View>
-      <View>
-        <TextInput
-          style={styles.inputfields}
-          onChange={(e) => {
-            setSearchData(e.target.value);
-          }}
-          placeholder="Search Videos"
-        />
-      </View>
+      
       <ScrollView>
         {videodetails
           .filter((value) => {
             if (searchData === "") {
               return value;
             } else if (
-              value.title.toLowerCase().includes(searchData.toLowerCase())
+              value.videoid.toLowerCase().includes(searchData.toLowerCase())
             ) {
               return value;
             }
@@ -106,39 +98,23 @@ const AllVideos = ({navigation}) => {
             return (
               <View style={styles.container}>
                 <Card>
-                  <Card.Title>{val.title}</Card.Title>
-                  <Card.Image
-                    style={{ padding: 0 }}
-                    source={val.thumbnaillink}
-                  />
-                  <Text style={{ marginBottom: 10 }}>{val.description}</Text>
-                  <OpenURLButton
-                    url={val.link}
-                    buttonStyle={{
-                      borderRadius: 0,
-                      marginLeft: 0,
-                      marginRight: 0,
-                      marginBottom: 2,
-                    }}
-                    title="VIEW"
-                  ></OpenURLButton>
+                  <Card.Title>{val.videoid}</Card.Title>
+                  <Card.Title>{val.name}</Card.Title>
+                  
+                  <Text style={{ marginBottom: 10 }}>{val.comment}</Text>
+                  
+                  
                   <Button
                     buttonStyle={{
-                      backgroundColor: "#1fbf3f",
+                      backgroundColor: "gray",
 
                       borderRadius: 0,
                       marginLeft: 0,
                       marginRight: 0,
                       marginBottom: 2,
-
                     }}
-                    title="Add Feedback Comment"
-                    onPress={() =>
-                      navigation.navigate('AddComments', {
-                        paramKey:val._id,
-                        paramName:val.title
-                      })
-                    }
+                    title="DELETE COMMENT"
+                    onPress={() => deletevideo(val._id)}
                   />
                 </Card>
               </View>
@@ -215,4 +191,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AllVideos;
+export default CommentManage;

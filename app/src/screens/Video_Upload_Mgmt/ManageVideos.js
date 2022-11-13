@@ -136,6 +136,23 @@ const ManageVideos = ({navigation}) => {
                   />
                   <Button
                     buttonStyle={{
+                      backgroundColor: "#cc99ff",
+
+                      borderRadius: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginBottom: 2,
+
+                    }}
+                    title="Manage Video Comments"
+                    onPress={() =>
+                      navigation.navigate('Comments', {
+                        paramTitle:val.title,
+                      })
+                    }
+                  />
+                  <Button
+                    buttonStyle={{
                       backgroundColor: "gray",
 
                       borderRadius: 0,

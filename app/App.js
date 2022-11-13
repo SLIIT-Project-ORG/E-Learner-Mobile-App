@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import FView from './src/screens/Course_Mgmt/FeedbackView';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostDelete from './src/screens/Post_Mgmt/PostDelete';
@@ -25,100 +25,127 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen from 'react-native-screens';
 
+import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
+import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
+
+import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
+import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
+import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
+import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
+import AppBarComponent from './src/screens/Common/AppBarComponent';
+import GetStarted from './src/screens/User_Mgmt/GetStartedPage';
+
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View>
-      <Home />
-    </View>,
-
-    <View>
-      <Login />
-    </View>,
-
-    <View>
-      <SignIn />
-    </View>,
-
-    <View>
-      <ForgetPassword />
-    </View>,
-
-    <View>
-      <ChangePassword />
-    </View>,
-
-    <View>
-      <ProfileUpdate />
-    </View>,
-
-    <View>
-      <Profile />
-    </View>,
-
-    <View>
-      <PostView />
-    </View>,
-
-    <View>
-      <UpdatePost />
-    </View>,
-
-    <View>
-      <AddVideos />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <PostDelete />
-    </View>,
-
-    <View>
-      <AddPost />
-    </View>,
-
-
     // <View>
-    // <CourseStep />
+    //   <Home />
     // </View>,
 
     // <View>
-    // <Acourses />
+    //   <Login />
     // </View>,
 
     // <View>
-    //  <Dcourses />
-    // </View>
-
-    // <View>
-    // <Icourses />
+    //   <SignIn />
     // </View>,
 
-    //   <View>
-    //    <Feedback />
-    //   </View>,
+    // <View>
+    //   <ForgetPassword />
+    // </View>,
 
-    //   <View>
-    //   <FView />
-    //   </View>, 
+    // <View>
+    //   <ChangePassword />
+    // </View>,
+
+    // <View>
+    //   <ProfileUpdate />
+    // </View>,
+
+
+    // <View>
+    //   <Profile />
+    // </View>,
+
+    // <View>
+    //   <PostView />
+    // </View>,
+
+
+
+
+
+
+    // <View>
+    //   <UpdatePost />
+    // </View>,
+
+
+    // <View>
+    //   <AddVideos />
+    // </View>,
+
+    // <View>
+    //   <PostDelete />
+    // </View>,
+
+    // <View>
+    //   <PostDelete />
+    // </View>,
+
+    // <View>
+    //   <AddPost />
+    // </View>,
+
+
+    // // <View>
+    // // <CourseStep />
+    // // </View>,
+
+    // // <View>
+    // // <Acourses />
+    // // </View>,
+
+    // // <View>
+    // //  <Dcourses />
+    // // </View>
 
 
     //  <View>
     //  <AddVideos />
     //  </View>,
 
-    //  <View>
-    //  <ManageVideos />
+
+    // // <View>
+    // // <Icourses />
+    // // </View>,
+
+    // //   <View>
+    // //    <Feedback />
+    // //   </View>,
+
+    // //   <View>
+    // //   <FView />
+    // //   </View>, 
+
+
+    // //  <View>
+    // //  <AddVideos />
+    // //  </View>,
+
+    // //  <View>
+    // //  <ManageVideos />
+    // // </View>,
+
+    // <View>
+    //   <AddPost />
     // </View>,
 
     <View>
       <AddPost />
-    </View>
-    ,
+    </View>,
 
     <View>
       <PostView />
@@ -126,8 +153,25 @@ export default function App() {
 
     <View>
       <PostViewById />
-    </View>
+    </View>,
 
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ManageVideos">
+        <Stack.Screen
+          name="ManageVideos"
+          component={ManageVideos}
+        />
+        <Stack.Screen
+          name="AddVideos"
+          component={AddVideos}
+        />
+        <Stack.Screen
+          name="UpdateVideoDetails"
+          component={UpdateVideoDetails}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
 
 
     // <NavigationContainer>
@@ -138,9 +182,54 @@ export default function App() {
     //   </Stack.Navigator>
     // </NavigationContainer>
 
+
+
     // <View>
-    //   <CourseStep/>
-    // </View>
+    //   <AddArticles/>
+    // </View>,
+    // <View>
+    //   <ArticleView/>
+    // </View>,
+    // <View>
+    //   <UpdateArticles/>
+    // </View>,
+    // <View>
+    //   <DeleteArticle/>
+    // </View>,
+    //  <View>
+    // <CourseStep/>
+    // </View>,
+
+    // <View>
+    // <AvailableCourses/>
+    // </View>,
+
+    // <View>
+    //  <DeleteCourses />
+    // </View>,
+
+    // <View>
+    // <CourseIntro />
+    // </View>,
+
+    //   <View>
+    //    <Feedback />
+    //   </View>,
+
+    //   <View>
+    //   <FView />
+    //   </View>w
+
+
+    //   <View>
+    //   <AddPost />
+    // </View>,
+    // <View>
+    //   <PostView/>
+    //   </View>
+
+
+
 
   );
 }
