@@ -7,13 +7,13 @@ import courses from '../../../assets/courses.png';
 import share from '../../../assets/share.png'
 import AppBarComponent from "../Common/AppBarComponent";
 
-const Home = () => {
+const Home = ({ navigation }) => {
 
     return (
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-                <AppBarComponent/>
+                <AppBarComponent />
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={home} style={styles.BorderClass} />
 
@@ -30,9 +30,14 @@ const Home = () => {
                 //                
                 </View>
                 <View >
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() =>
+                            navigation.navigate('CourseMenu')
+                        }
+                    >
 
-                        <Image source={courses} style={styles.BorderButton3} />
+                        <Image source={courses} style={styles.BorderButton3}
+                        />
                     </TouchableOpacity>
                 </View>
 
