@@ -30,10 +30,12 @@ import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
 
 import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
 import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
-import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
+import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticles';
 import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
+import ViewArticle from './src/screens/File_Upload_Mgmt/ViewArticle';
+
 import AppBarComponent from './src/screens/Common/AppBarComponent';
-import GetStarted from './src/screens/User_Mgmt/GetStartedPage';
+import GetStartedPage from './src/screens/User_Mgmt/GetStartedPage';
 
 
 const Stack = createStackNavigator();
@@ -143,35 +145,35 @@ export default function App() {
     //   <AddPost />
     // </View>,
 
-    <View>
-      <AddPost />
-    </View>,
+    // <View>
+    //   <AddPost />
+    // </View>,
 
-    <View>
-      <PostView />
-    </View>,
+    // <View>
+    //   <PostView />
+    // </View>,
 
-    <View>
-      <PostViewById />
-    </View>,
+    // <View>
+    //   <PostViewById />
+    // </View>,
 
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="ManageVideos">
-        <Stack.Screen
-          name="ManageVideos"
-          component={ManageVideos}
-        />
-        <Stack.Screen
-          name="AddVideos"
-          component={AddVideos}
-        />
-        <Stack.Screen
-          name="UpdateVideoDetails"
-          component={UpdateVideoDetails}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="ManageVideos">
+    //     <Stack.Screen
+    //       name="ManageVideos"
+    //       component={ManageVideos}
+    //     />
+    //     <Stack.Screen
+    //       name="AddVideos"
+    //       component={AddVideos}
+    //     />
+    //     <Stack.Screen
+    //       name="UpdateVideoDetails"
+    //       component={UpdateVideoDetails}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
 
 
     // <NavigationContainer>
@@ -182,20 +184,56 @@ export default function App() {
     //   </Stack.Navigator>
     // </NavigationContainer>
 
+  <NavigationContainer>
+       <Stack.Navigator initialRouteName="GetStartedPage">
+       <Stack.Screen
+          name="GetStartedPage"
+          component={GetStartedPage}
+        />
+       <Stack.Screen
+          name="Home"
+          component={Home}
+        />
+         <Stack.Screen
+          name="ArticleView"
+          component={ArticleView}
+        />
+        <Stack.Screen
+          name="AddArticle"
+          component={AddArticles}
+        />
+        <Stack.Screen
+          name="UpdateArticles"
+          component={UpdateArticles}
+        />
+        <Stack.Screen
+          name="ViewArticle"
+          component={ViewArticle}
+        />
 
+      </Stack.Navigator>
+    </NavigationContainer>  
 
     // <View>
     //   <AddArticles/>
-    // </View>,
+    // </View>
+    // ,
     // <View>
     //   <ArticleView/>
-    // </View>,
-    // <View>
-    //   <UpdateArticles/>
-    // </View>,
+    // </View>
+    // ,
+  //   <View>
+  //     <UpdateArticles/>
+  //   </View>
+  //   ,
+  //   <View>
+  //   <ViewArticle/>
+  // </View>
+    // ,
     // <View>
     //   <DeleteArticle/>
-    // </View>,
+    // </View>
+    // ,
     //  <View>
     // <CourseStep/>
     // </View>,

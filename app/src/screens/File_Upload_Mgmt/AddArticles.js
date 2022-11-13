@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 const AddArticles = () => {
-  const [topic, settopic] = useState("");
+  const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
   const [thumbnaillink, setthumbnaillink] = useState("");
   const [authors, setauthors] = useState("");
@@ -21,14 +21,14 @@ const AddArticles = () => {
   function sendData(e) {
     e.preventDefault();
     const newArticle = {
-      topic,
+      title,
       description,
       thumbnaillink,
       authors,
     };
     
     axios
-      .post("http://localhost:5000/articles/submit", newArticle)
+      .post("http://localhost:8000/articles/submit", newArticle)
       .then(() => {
         alert("Article Added Successfylly Detais added");
       })
@@ -48,13 +48,13 @@ const AddArticles = () => {
         </View>
 
         <View>
-          <Text style={styles.label}>Article Topic</Text>
+          <Text style={styles.label}>Article Title</Text>
           <TextInput
             style={styles.inputfields}
             onChange={(e) => {
-              settopic(e.target.value);
+              settitle(e.target.value);
             }}
-            placeholder="Topic of the Article"
+            placeholder="Enter Title of the Article"
           />
         </View>
 
@@ -75,7 +75,7 @@ const AddArticles = () => {
             onChange={(e) => {
               setthumbnaillink(e.target.value);
             }}
-            placeholder="Thubmnail Link"
+            placeholder="Enter Thubmnail Link"
           />
         </View>
         <View>
