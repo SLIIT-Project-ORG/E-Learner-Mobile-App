@@ -12,7 +12,6 @@ const Home = ({ navigation }) => {
 
         <SafeAreaView style={{ felix: 1 }}>
             <ScrollView>
-                <AppBarComponent />
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={home} style={styles.BorderClass} />
 

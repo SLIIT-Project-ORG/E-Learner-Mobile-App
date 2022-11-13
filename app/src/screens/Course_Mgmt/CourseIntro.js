@@ -30,8 +30,6 @@ const CourseIntro = ({ route }) => {
     <SafeAreaView>
       <ScrollView>
 
-        <AppBarComponent />
-
         <View style={styles.box1}>
           {/* <Text style={styles.title}>{course[stepId].title}</Text> */}
           <Text style={styles.title1}>Catogory = {content.category} </Text>
@@ -41,8 +39,10 @@ const CourseIntro = ({ route }) => {
         <View style={styles.box} >
           <View><Image source={java} style={styles.BorderClass1} ></Image></View>
 
-          <View><Text style={styles.label}>INTRODUCTION</Text></View>
-
+          <View><Text style={styles.label}></Text></View>
+          <Text>
+          Java is a programming language and computing platform first released by Sun Microsystems in 1995. It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built. New, innovative products and digital services designed for the future continue to rely on Java, as well.
+          </Text>
 
         </View>
 

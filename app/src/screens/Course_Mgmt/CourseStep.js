@@ -28,7 +28,6 @@ const CourseStep = ({ route,navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <AppBarComponent />
         <View>
           <Image source={steps} style={styles.BorderClass}></Image>
         </View>

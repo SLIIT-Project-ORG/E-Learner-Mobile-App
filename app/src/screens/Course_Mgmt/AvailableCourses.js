@@ -25,13 +25,9 @@ const AvailableCourses = ({ navigation }) => {
     <SafeAreaView>
       <ScrollView>
 
-        <AppBarComponent />
-
         <View style={styles.container}>
           <Text style={styles.title}>AVAILABLE COURSES</Text>
         </View>
-
-
 
         {
 

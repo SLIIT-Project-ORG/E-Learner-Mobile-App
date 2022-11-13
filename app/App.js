@@ -41,124 +41,6 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-=======
-    // <View>
-    //   <Home />
-    // </View>,
-
-    // <View>
-    //   <Login />
-    // </View>,
-
-    // <View>
-    //   <SignIn />
-    // </View>,
-
-    // <View>
-    //   <ForgetPassword />
-    // </View>,
-
-    // <View>
-    //   <ChangePassword />
-    // </View>,
-
-    // <View>
-    //   <ProfileUpdate />
-    // </View>,
-
-
-    // <View>
-    //   <Profile />
-    // </View>,
-
-    // <View>
-    //   <PostView />
-    // </View>,
-
-
-
-
-
-
-    // <View>
-    //   <UpdatePost />
-    // </View>,
-
-
-    // <View>
-    //   <AddVideos />
-    // </View>,
-
-    // <View>
-    //   <PostDelete />
-    // </View>,
-
-    // <View>
-    //   <PostDelete />
-    // </View>,
-
-    // <View>
-    //   <AddPost />
-    // </View>,
-
-
-    // // <View>
-    // // <CourseStep />
-    // // </View>,
-
-    // // <View>
-    // // <Acourses />
-    // // </View>,
-
-    // // <View>
-    // //  <Dcourses />
-    // // </View>
-
-
-    //  <View>
-    //  <AddVideos />
-    //  </View>,
-
-
-    // // <View>
-    // // <Icourses />
-    // // </View>,
-
-    // //   <View>
-    // //    <Feedback />
-    // //   </View>,
-
-    // //   <View>
-    // //   <FView />
-    // //   </View>, 
-
-
-    // //  <View>
-    // //  <AddVideos />
-    // //  </View>,
-
-    // //  <View>
-    // //  <ManageVideos />
-    // // </View>,
-
-    // <View>
-    //   <AddPost />
-    // </View>,
-
-    // <View>
-    //   <PostView />
-    // </View>,
-
-    // <View>
-    //   <PostViewById />
-    // </View>,
-
 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="E-learner">
@@ -211,45 +93,39 @@ export default function App() {
           name="FeedbackView"
           component={FeedbackView}
         />
-      </Stack.Navigator>
-    </NavigationContainer>
-         <Stack.Screen
+        <Stack.Screen
           name="Comments"
           component={CommentManage}
         />
-      {/* </Stack.Navigator>
-    </NavigationContainer>,
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Allposts"> */}
-      <Stack.Screen 
+        <Stack.Screen
           name="E-learner"
           component={GetStarted}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="LOGIN PAGE"
           component={Login}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="FORGET PASSWORD PAGE"
           component={ForgetPassword}
         />
-         <Stack.Screen 
+        <Stack.Screen
           name="CHANGE PASSWORD PAGE"
           component={ChangePassword}
         />
-        <Stack.Screen 
+        <Stack.Screen
           name="REGISTER PAGE"
           component={SignIn}
         />
-         
 
-      <Stack.Screen 
+
+        <Stack.Screen
           name="HOME PAGE"
           component={Home}
         />
 
-        <Stack.Screen 
+        <Stack.Screen
           name="ADD POST PAGE"
           component={AddPost}
         />
@@ -269,64 +145,9 @@ export default function App() {
           name="UPDATE POST"
           component={UpdatePost}
         />
-        
+
       </Stack.Navigator>
     </NavigationContainer>
-
-
-    // <NavigationContainer>
-
-    //   <Stack.Navigator initialRouteName='AvailableCourses'>
-    //     <Stack.Screen name='AvailableCourses' component={AvailableCourses} />
-    //     <Stack.Screen name='CourseStep' component={CourseStep} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-
-
-
-    // <View>
-    //   <AddArticles/>
-    // </View>,
-    // <View>
-    //   <ArticleView/>
-    // </View>,
-    // <View>
-    //   <UpdateArticles/>
-    // </View>,
-    // <View>
-    //   <DeleteArticle/>
-    // </View>,
-    //  <View>
-    // <CourseStep/>
-    // </View>,
-
-    // <View>
-    // <AvailableCourses/>
-    // </View>,
-
-    // <View>
-    //  <DeleteCourses />
-    // </View>,
-
-    // <View>
-    // <CourseIntro />
-    // </View>,
-
-    //   <View>
-    //    <Feedback />
-    //   </View>,
-
-    //   <View>
-    //   <FView />
-    //   </View>w
-
-
-    //   <View>
-    //   <AddPost />
-    // </View>,
-    // <View>
-    //   <PostView/>
-    //   </View>
 
   );
 }

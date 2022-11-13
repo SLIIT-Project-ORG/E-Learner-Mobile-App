@@ -7,8 +7,7 @@ const DeleteCourses = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-   
-     <AppBarComponent/>
+  
     
         <View style={styles.container}>
           <Text style={styles.title}>MY COURSES</Text>
