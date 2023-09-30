@@ -1,5 +1,3 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import FView from './src/screens/Course_Mgmt/FeedbackView';
 import AddPost from './src/screens/Post_Mgmt/AddPost';
 import PostDelete from './src/screens/Post_Mgmt/PostDelete';
 import PostView from './src/screens/Post_Mgmt/PostView';
@@ -10,8 +8,6 @@ import ForgetPassword from './src/screens/User_Mgmt/ForgetPassword';
 import Home from './src/screens/User_Mgmt/Home';
 import Login from './src/screens/User_Mgmt/Login';
 import SignIn from './src/screens/User_Mgmt/Signin';
-import ProfileUpdate from './src/screens/User_Mgmt/UpdateProfile';
-import Profile from './src/screens/User_Mgmt/UserProfile';
 import AddVideos from './src/screens/Video_Upload_Mgmt/AddVideoDetails';
 import ManageVideos from './src/screens/Video_Upload_Mgmt/ManageVideos';
 import CourseStep from './src/screens/Course_Mgmt/CourseStep';
@@ -23,19 +19,14 @@ import FeedbackView from './src/screens/Course_Mgmt/FeedbackView';
 import UpdateVideoDetails from './src/screens/Video_Upload_Mgmt/UpdateVideoDetails';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Screen from 'react-native-screens';
-
 import AllVideos from './src/screens/Video_Upload_Mgmt/VideoView';
 import AddComments from './src/screens/Video_Upload_Mgmt/AddComments';
 import CommentManage from './src/screens/Video_Upload_Mgmt/CommentView';
 import AddArticles from './src/screens/File_Upload_Mgmt/AddArticles';
 import ArticleView from './src/screens/File_Upload_Mgmt/ArticleView';
 import UpdateArticles from './src/screens/File_Upload_Mgmt/UpdateArticle';
-import DeleteArticle from './src/screens/File_Upload_Mgmt/DeleteArticles';
 import CourseMenu from './src/screens/Course_Mgmt/CourseMenu';
-import AppBarComponent from './src/screens/Common/AppBarComponent';
 import GetStarted from './src/screens/User_Mgmt/GetStartedPage';
-import ViewArticle from './src/screens/User_Mgmt/ViewArticle';
 
 const Stack = createStackNavigator();
 
